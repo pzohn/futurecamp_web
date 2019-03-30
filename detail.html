@@ -496,6 +496,39 @@
     $(document).ready(function(){
       var args = getQueryStringArgs();
       console.log(args.id);
+      var detail_id = args.id;
+        $.ajax({
+          type:'POST',
+          url:'https://www.hattonstar.com/getCampactivities',
+          dataType:'json',
+          success:function(data){
+            var length = data.length;
+            var row =  Math.ceil(length / 3);
+            var remainder = length % 3;
+            var html = "";
+            for( var i = 0; i < length; i++ ) {
+                if (i%3==0) {
+                  html += '<div class="d-flex" style="height: 330px;">';
+                }
+                html += setDiv(data[i]);
+                if (i%3==2) {
+                  html += '</div>';
+                }
+            }
+            if (remainder) {
+              var num = 3 - remainder;
+              for (var i = 0; i < num; i++) {
+                html += setUnDiv();
+              }
+               html += '</div>';
+            }
+            console.log(html);
+            $("#Good_Div").html(html);
+          },
+          error:function(hex){
+            alert("错误返回");
+          }
+      }) 
     })
   </script>
 
