@@ -11,6 +11,7 @@
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./layui/layui.all.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=1FcYZDMuBrssKW6vM1Y7EDoCTCggBC7Z"></script>
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
   <style type="text/css">
@@ -21,6 +22,7 @@
     li{
       margin: 0 10px;
     }
+     #allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
     .layui-tab-title li{
       width: 15%;
     }
@@ -30,6 +32,14 @@
       padding-bottom: 10px !important;
       background: #669900;
       border-radius: 0px;
+    }
+    .fiximg
+    {
+      width:auto;height:auto;max-width:50px;max-height:50px;padding-left:15%;
+    }
+    .autoimg
+    {
+      width:auto;height:auto;max-width:70%;max-height:70%;padding-left:15%;
     }
     .img-thumbnail{
       border: 0px;
@@ -86,11 +96,8 @@
     <div style="width: 100%;padding-left: 5%;">
       <div class="layui-carousel" id="test10">
         <div carousel-item="">
-          <div><img src="images/home/header1.jpg"></div>
-          <div><img src="images/home/header2.jpg"></div>
-          <div><img src="images/home/header3.jpg"></div>
-          <div><img src="images/home/header4.jpg"></div>
-          <div><img src="images/home/header5.jpg"></div>
+          <div><img src="images/index/body1.jpg"></div>
+          <div><img src="images/index/body2.jpg"></div>
         </div>
       </div>
     </div>
@@ -104,12 +111,37 @@
     <div>
       <hr style="width: 100%;height: 5px;background-color: #5FB878;margin: 0;">
     </div>
-    <div>
-     <p>
-     游美营地教育 / YMCE Group成立于2010年，相继成为美国营地协会（ACA）和国际营地协会（ICF）的双成员，中国营地教育联盟（CCEA）发起人理事单位。作为一家总部位于北京的国际营地教育机构，2016年，游美收获爆炸式增长，分别于国内千岛湖、上海、北京成立3家自建营地。2017年底，游美公司获得国内知名机构投资，成为行业内一致认可的头部企业。</p>
-     <p>
-       2018年，未来营推出“重新定义营地教育”计划，重磅打造YSS游美环球滑雪学院和游美Discovery环球探索团，致力于更好地培养中国孩子成为具有国际化视野和竞争力的青少年。 8年来，未来营与美、加等国50多个TOP顶级营地建立了战略合作关系，组织了近万名中国青少年赴海外或国内自建营地参加夏令营和游学等活动，得到了孩子和家长的高度认可与好评。
-     </p>
+
+    <div class = "layui-row">
+      <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 55%;">
+        <div class="layui-row">
+          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+             <div><img src="images/info/2.jpg" style="margin: 2px;"></div>
+          </div>
+          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+              <div><img src="images/info/2.jpg" style="margin: 2px;"></div>
+          </div>
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+              <div><img src="images/info/4.jpg" style="margin: 2px;"></div>
+          </div>
+          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+              <div><img src="images/info/4.jpg" style="margin: 2px;"></div>
+          </div>
+          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+              <div><img src="images/info/6.jpg" style="margin: 2px;"></div>
+          </div>
+
+        </div>
+      </div>
+      <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 45%;">
+        <div>
+         <p style="font-size: 18px;">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;游美营地教育 / YMCE Group成立于2010年，相继成为美国营地协会（ACA）和国际营地协会（ICF）的双成员，中国营地教育联盟（CCEA）发起人理事单位。作为一家总部位于北京的国际营地教育机构，2016年，游美收获爆炸式增长，分别于国内千岛湖、上海、北京成立3家自建营地。2017年底，游美公司获得国内知名机构投资，成为行业内一致认可的头部企业。</p>
+         <p style="font-size: 18px;">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2018年，未来营推出“重新定义营地教育”计划，重磅打造YSS游美环球滑雪学院和游美Discovery环球探索团，致力于更好地培养中国孩子成为具有国际化视野和竞争力的青少年。 8年来，未来营与美、加等国50多个TOP顶级营地建立了战略合作关系，组织了近万名中国青少年赴海外或国内自建营地参加夏令营和游学等活动，得到了孩子和家长的高度认可与好评。
+         </p>
+        </div>
+      </div>
     </div>
    <div class="row" style="margin: 0">
       <div class= "text-center" style="width: 150px;height: 58px;background-color: #FFB800;padding-top: 10px;margin-top:20px;color: white;">
@@ -120,18 +152,75 @@
     <div>
       <hr style="width: 100%;height: 5px;background-color: #5FB878;margin: 0;">
     </div>
+
+    <div class = "layui-row">
+      <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 35%;">
+        <div class="layui-row">
+            <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 20%;">
+               <div><img class="fiximg" src="images/info/weixin.png"></div>
+            </div>
+            <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 80%;">
+              <p style="font-size: 30px;padding: ">
+                游美营地教育
+              </p>
+            </div>
+        </div>
+        <div><img class="autoimg" src="images/info/gongzhonghao.jpg"></div>
+      </div>
+      <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 65%;">
+        <div class="layui-row">
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 10%;">
+             <div><img class="fiximg" src="images/info/phone.png"></div>
+          </div>
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 90%;">
+            <p style="font-size: 30px;padding-bottom: 10px;">
+              (010）64173809
+            </p>
+          </div>
+        </div>
+        <div class="layui-row">
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 10%;">
+             <div><img class="fiximg" src="images/info/mail.png"></div>
+          </div>
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 90%;">
+            <p style="font-size: 30px;padding-bottom: 10px; ">
+              darius@ymcegroup.com
+            </p>
+          </div>
+        </div>
+        <div class="layui-row">
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 10%;">
+             <div><img class="fiximg" src="images/info/net.png"></div>
+          </div>
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 90%;">
+            <p style="font-size: 30px;padding-bottom: 10px;  ">
+              http://www.ymcegroup.com/
+            </p>
+          </div>
+        </div>
+        <div class="layui-row">
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 10%;">
+             <div><img class="fiximg" src="images/info/dizhi.png"></div>
+          </div>
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 90%;">
+              <div id="allmap" style="width: 500px;height: 350px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
    <div class="row" style="margin: 0">
       <div class= "text-center" style="width: 150px;height: 58px;background-color: #FF5722;padding-top: 10px;margin-top:20px;color: white;">
-        <p style="font-size: 24px;">营地介绍</p>
+        <p style="font-size: 24px;">热门活动</p>
       </div>
     </div>
 
     <div>
       <hr style="width: 100%;height: 5px;background-color: #5FB878;margin: 0;">
     </div>
-
-
-
+    <div id="Good_Div">
   </div>
 
   <div class="tail" style="background:url(images/index/u264.png);height: 300px;">
@@ -169,83 +258,57 @@
 
 
   <script>
-  layui.use(['carousel', 'form'], function(){
-    var carousel = layui.carousel
-    ,form = layui.form;
-    
-    //图片轮播
-    carousel.render({
-      elem: '#test10'
-      ,width: '95%'
-      ,height: '400px'
-      ,interval: 5000
-    });
-    
-    //事件
-    carousel.on('change(test4)', function(res){
-      console.log(res)
-    });
-    
-    var $ = layui.$, active = {
-      set: function(othis){
-        var THIS = 'layui-bg-normal'
-        ,key = othis.data('key')
-        ,options = {};
-        
-        othis.css('background-color', '#5FB878').siblings().removeAttr('style'); 
-        options[key] = othis.data('value');
-        ins3.reload(options);
-      }
-    };
-    
-    //监听开关
-    form.on('switch(autoplay)', function(){
-      ins3.reload({
-        autoplay: this.checked
-      });
-    });
-    
-    $('.demoSet').on('keyup', function(){
-      var value = this.value
-      ,options = {};
-      if(!/^\d+$/.test(value)) return;
-      
-      options[this.name] = value;
-      ins3.reload(options);
-    });
-    
-    //其它示例
-    $('.demoTest .layui-btn').on('click', function(){
-      var othis = $(this), type = othis.data('type');
-      active[type] ? active[type].call(this, othis) : '';
-    });
-  });
+      var map = new BMap.Map("allmap");    // 创建Map实例
+  map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+  //添加地图类型控件
+  map.addControl(new BMap.MapTypeControl({
+    mapTypes:[
+            BMAP_NORMAL_MAP,
+            BMAP_HYBRID_MAP
+        ]}));   
+  map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+  map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
 
 
-    function getQueryStringArgs() {
-      var qs = (location.search.length > 0 ? location.search.substring(1) : ""),
-        args = {},
-        items = qs.length ? qs.split("&") : [],
-          item = null,
-        name = null,
-        value = null,
-        i = 0,
-        len = items.length;
-      for(i = 0; i < len; i++) {
-        item = items[i].split("=");
-        name = decodeURIComponent(item[0]);
-        value = decodeURIComponent(item[1]);
-        if(name.length) {
-          args[name] = value;
-        }
-      }
-      return args;
-    }
-
+    function setDiv(item){
+      var div = '<div class="p-2 flex-fill">'
+          + '<img src='
+          + getPath(item)
+          + ' style="padding-bottom: 20px;">'
+          + '<div style="width: 338px;">'
+          +'<p>'
+           + item.name
+          + '</p>'
+          + '</div>'
+          + '<div style="width: 338px; padding-left: 70%">'
+          + '<a href="detail.html?id='
+          + item.id
+          + '"'
+          + ' class="btn btn-primary" role="button" style="width: 90px;">查看详情</a>'
+          + '</div>'
+          +'</div>'
+      return div
+    } 
+    function setUnDiv(item){
+      var div = '<div class="p-2 flex-fill">'
+          + '<img style="padding-bottom: 20px;">'
+          + '<div style="width: 338px;">'
+          +'<p>'
+          + '</p>'
+          + '</div>'
+          + '<div style="width: 338px; padding-left: 70%">'
+          + '</div>'
+          +'</div>'
+      return div
+    } 
+    function getPath(item){
+      var url = "http://hattonstar.com/"
+          + item.file
+          +'/'
+          + item.title_pic
+      return url;
+    } 
     $(document).ready(function(){
-      var args = getQueryStringArgs();
-      console.log(args.id);
-      var detail_id = args.id;
         $.ajax({
           type:'POST',
           url:'https://www.hattonstar.com/getCampactivities',
@@ -277,7 +340,7 @@
           error:function(hex){
             alert("错误返回");
           }
-      }) 
+        })      
     })
   </script>
 
