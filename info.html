@@ -203,7 +203,7 @@
              <div><img class="fiximg" src="images/info/dizhi.png"></div>
           </div>
           <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 90%;">
-              <div id="allmap" style="width: 500px;height: 350px;"></div>
+              <div id="map" style="width: 500px;height: 350px;"></div>
           </div>
         </div>
       </div>
@@ -258,16 +258,61 @@
 
 
   <script>
-      var map = new BMap.Map("allmap");    // 创建Map实例
-  map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
-  //添加地图类型控件
-  map.addControl(new BMap.MapTypeControl({
-    mapTypes:[
-            BMAP_NORMAL_MAP,
-            BMAP_HYBRID_MAP
-        ]}));   
-  map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
-  map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+   //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(116.486576,40.005293),15);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"",title:"游美营地(北京)教育科技有限公司",imageOffset: {width:-69,height:-21},position:{lat:40.005293,lng:116.486576}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:3});
+      map.addControl(navControl);
+    }
+    var map;
+      initMap();
+
 
 
     function setDiv(item){
