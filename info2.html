@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>详细介绍</title>
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./layui/layui.all.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=1FcYZDMuBrssKW6vM1Y7EDoCTCggBC7Z"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
+  <style type="text/css">
+    html{width:100%;height:100%;margin:0px;padding:0px;}
+    body{
+      background: url("https://www.hattonstar.com/gfc/background.jpg");width: 100%
+    }
+    li{
+      margin: 0 10px;
+    }
+     #allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+    .layui-tab-title li{
+      width: 15%;
+    }
+    .jumbotron{
+      margin-bottom: 0px !important;
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+      background: #669900;
+      border-radius: 0px;
+    }
+    .autoimg
+    {
+      width:auto;height:auto;max-width:100%;max-height:100%;padding-left:15%;
+    }
+    .img-thumbnail{
+      border: 0px;
+    }
+    .layui-timeline-title{
+      color: #ffaa00 !important;
+    }
+    .layui-timeline-title_p{
+      color: #ffaa00 ;
+    }
+  </style>
+
+</head>
+
+<body>
+ <div class="container">
+  <div class="header" style="background: url('https://www.hattonstar.com/gfc/headerbg.png');">
+    <div class="layui-row">
+        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 30%;">
+           <div><img class="autoimg" src="images/info/logo.png"></div>
+        </div>
+        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 40%;">
+          <p style="font-size: 50px;color:#FFFFFF;padding-top:5%;padding-left: 5% ">
+            知于体验  行与未来
+          </p>
+        </div>
+        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 30%;">
+          <div><img class="autoimg" src="images/info/phone.png" style="padding-top:4%;padding-right: 5%"></div>
+        </div>
+    </div>
+    <ul class="layui-nav" style="background-color: #0099FF;opacity:0.7;">
+      <li class="layui-nav-item"><a href="" style="color: #FFFFFF">首页/HOME</a></li>
+      <li class="layui-nav-item"><a href="" style="color: #FFFFFF">国内营</a></li>
+      <li class="layui-nav-item"><a href="" style="color: #FFFFFF">国外营</a></li>
+      <li class="layui-nav-item"><a href="" style="color: #FFFFFF">特色营</a></li>
+      <li class="layui-nav-item"><a href="" style="color: #FFFFFF">群营会</a></li>
+      <li class="layui-nav-item"><a href="" style="color: #FFFFFF">营会团</a></li>
+    </ul> 
+
+  </div>
+  <div class="body">
+    <div style="width: 100%;padding-left: 5%;">
+      <div class="layui-carousel" id="test10">
+        <div carousel-item="">
+          <div><img src="images/index/body1.jpg"></div>
+          <div><img src="images/index/body2.jpg"></div>
+        </div>
+      </div>
+    </div>
+
+   <div class="row" style="margin: 0">
+      <div class= "text-center" style="width: 150px;height: 58px;background-color: #01AAED;padding-top: 10px;margin-top:20px;">
+        <p style="font-size: 24px;">营地介绍</p>
+      </div>
+    </div>
+
+    <div>
+      <hr style="width: 100%;height: 5px;background-color: #5FB878;margin: 0;">
+    </div>
+
+    <div class = "layui-row">
+      <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 55%;">
+        <div class="layui-row">
+          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+             <div><img src="images/info/2.jpg" style="margin: 2px;"></div>
+          </div>
+          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+              <div><img src="images/info/2.jpg" style="margin: 2px;"></div>
+          </div>
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+              <div><img src="images/info/4.jpg" style="margin: 2px;"></div>
+          </div>
+          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+              <div><img src="images/info/4.jpg" style="margin: 2px;"></div>
+          </div>
+          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+              <div><img src="images/info/6.jpg" style="margin: 2px;"></div>
+          </div>
+
+        </div>
+      </div>
+      <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 45%;">
+        <div>
+         <p style="font-size: 18px;">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;游美营地教育 / YMCE Group成立于2010年，相继成为美国营地协会（ACA）和国际营地协会（ICF）的双成员，中国营地教育联盟（CCEA）发起人理事单位。作为一家总部位于北京的国际营地教育机构，2016年，游美收获爆炸式增长，分别于国内千岛湖、上海、北京成立3家自建营地。2017年底，游美公司获得国内知名机构投资，成为行业内一致认可的头部企业。</p>
+         <p style="font-size: 18px;">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2018年，未来营推出“重新定义营地教育”计划，重磅打造YSS游美环球滑雪学院和游美Discovery环球探索团，致力于更好地培养中国孩子成为具有国际化视野和竞争力的青少年。 8年来，未来营与美、加等国50多个TOP顶级营地建立了战略合作关系，组织了近万名中国青少年赴海外或国内自建营地参加夏令营和游学等活动，得到了孩子和家长的高度认可与好评。
+         </p>
+        </div>
+      </div>
+    </div>
+   <div class="row" style="margin: 0">
+      <div class= "text-center" style="width: 150px;height: 58px;background-color: #FFB800;padding-top: 10px;margin-top:20px;color: white;">
+        <p style="font-size: 24px;">联系方式</p>
+      </div>
+    </div>
+
+    <div>
+      <hr style="width: 100%;height: 5px;background-color: #5FB878;margin: 0;">
+    </div>
+
+    <div class = "layui-row">
+      <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 35%;">
+        <div class="layui-row">
+            <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 20%;">
+               <div><img class="fiximg" src="images/info/weixin.png"></div>
+            </div>
+            <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 80%;">
+              <p style="font-size: 30px;padding: ">
+                游美营地教育
+              </p>
+            </div>
+        </div>
+        <div><img class="autoimg" src="images/info/gongzhonghao.jpg"></div>
+      </div>
+      <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 65%;">
+        <div class="layui-row">
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 10%;">
+             <div><img class="fiximg" src="images/info/phone.png"></div>
+          </div>
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 90%;">
+            <p style="font-size: 30px;padding-bottom: 10px;">
+              (010）64173809
+            </p>
+          </div>
+        </div>
+        <div class="layui-row">
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 10%;">
+             <div><img class="fiximg" src="images/info/mail.png"></div>
+          </div>
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 90%;">
+            <p style="font-size: 30px;padding-bottom: 10px; ">
+              darius@ymcegroup.com
+            </p>
+          </div>
+        </div>
+        <div class="layui-row">
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 10%;">
+             <div><img class="fiximg" src="images/info/net.png"></div>
+          </div>
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 90%;">
+            <p style="font-size: 30px;padding-bottom: 10px;  ">
+              http://www.ymcegroup.com/
+            </p>
+          </div>
+        </div>
+        <div class="layui-row">
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 10%;">
+             <div><img class="fiximg" src="images/info/dizhi.png"></div>
+          </div>
+          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 90%;">
+              <div id="map" style="width: 500px;height: 350px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+   <div class="row" style="margin: 0">
+      <div class= "text-center" style="width: 150px;height: 58px;background-color: #FF5722;padding-top: 10px;margin-top:20px;color: white;">
+        <p style="font-size: 24px;">热门活动</p>
+      </div>
+    </div>
+
+    <div>
+      <hr style="width: 100%;height: 5px;background-color: #5FB878;margin: 0;">
+    </div>
+    <div id="Good_Div">
+  </div>
+
+  <div class="tail" style="background:url(images/index/u264.png);height: 300px;">
+    <div class="row" style="padding-left: 23%;padding-top: 10px;">
+      <div>
+        <hr style="width: 200px;border: 1px solid white;">
+      </div>
+      <div style="text-align: center;font-size: 16px;color: white;margin-top: 5px;margin-left: 10px;margin-right: 20px;color: white;">
+        <strong>联系我们/CONTACT US</strong>
+      </div>
+      <div>
+        <hr style="width: 200px;border: 1px solid white;">
+      </div>
+    </div>
+    <div>
+      <p style="text-align: center;font-size: 10px;color: white;">在您的建议与帮助下，我们将会变得越来越好！</p>
+    </div>
+    <div class="row">
+      <div style="padding-left: 180px;">
+        <img src="images/index/code.jpg" class="img-thumbnail" alt="Cinque Terre">
+      </div>
+      <div style="padding-left: 180px;padding-top: 20px;">
+        <img src="images/index/u26.png" class="" alt="Cinque Terre" style="width: 138px;height: 134px;">
+      </div>
+      <div style="padding-left: 50px;padding-top: 30px;color: white;text-align: center;font-size: 16px;">
+        <p>联系我们</p>
+        <p>Tel：（010）64173809</p>
+        <p>微信公众号：未来营地教育</p>
+      </div>
+      <div style="text-align: center;color: white;padding-left: 35%;padding-top: 10px;">
+        <p style="font-size: 12px;">© 2018 未来营地（北京）教育科技有限公司 | 京ICP备18014687号</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+   //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(116.486576,40.005293),15);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"",title:"游美营地(北京)教育科技有限公司",imageOffset: {width:-69,height:-21},position:{lat:40.005293,lng:116.486576}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:3});
+      map.addControl(navControl);
+    }
+    var map;
+      initMap();
+
+
+
+    function setDiv(item){
+      var div = '<div class="p-2 flex-fill">'
+          + '<img src='
+          + getPath(item)
+          + ' style="padding-bottom: 20px;">'
+          + '<div style="width: 338px;">'
+          +'<p>'
+           + item.name
+          + '</p>'
+          + '</div>'
+          + '<div style="width: 338px; padding-left: 70%">'
+          + '<a href="detail.html?id='
+          + item.id
+          + '"'
+          + ' class="btn btn-primary" role="button" style="width: 90px;">查看详情</a>'
+          + '</div>'
+          +'</div>'
+      return div
+    } 
+    function setUnDiv(item){
+      var div = '<div class="p-2 flex-fill">'
+          + '<img style="padding-bottom: 20px;">'
+          + '<div style="width: 338px;">'
+          +'<p>'
+          + '</p>'
+          + '</div>'
+          + '<div style="width: 338px; padding-left: 70%">'
+          + '</div>'
+          +'</div>'
+      return div
+    } 
+    function getPath(item){
+      var url = "http://hattonstar.com/"
+          + item.file
+          +'/'
+          + item.title_pic
+      return url;
+    } 
+    $(document).ready(function(){
+        $.ajax({
+          type:'POST',
+          url:'https://www.hattonstar.com/getCampactivities',
+          dataType:'json',
+          success:function(data){
+            var length = data.length;
+            var row =  Math.ceil(length / 3);
+            var remainder = length % 3;
+            var html = "";
+            for( var i = 0; i < length; i++ ) {
+                if (i%3==0) {
+                  html += '<div class="d-flex" style="height: 330px;">';
+                }
+                html += setDiv(data[i]);
+                if (i%3==2) {
+                  html += '</div>';
+                }
+            }
+            if (remainder) {
+              var num = 3 - remainder;
+              for (var i = 0; i < num; i++) {
+                html += setUnDiv();
+              }
+               html += '</div>';
+            }
+            console.log(html);
+            $("#Good_Div").html(html);
+          },
+          error:function(hex){
+            alert("错误返回");
+          }
+        })      
+    })
+  </script>
+
+</body>
+</html>
