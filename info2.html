@@ -35,7 +35,11 @@
     }
     .autoimg
     {
-      width:auto;height:auto;max-width:100%;max-height:100%;padding-left:15%;
+      width:auto;height:auto;max-width:100%;max-height:100%;
+    }
+    .selfautoimg
+    {
+      width:auto;height:auto;max-width:60%;max-height:60%;
     }
     .img-thumbnail{
       border: 0px;
@@ -53,9 +57,9 @@
 <body>
  <div class="container">
   <div class="header" style="background: url('https://www.hattonstar.com/gfc/headerbg.png');">
-    <div class="layui-row">
+    <div class="layui-row" style="padding-top: 4%;padding-bottom: 4%;">
         <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 30%;">
-           <div><img class="autoimg" src="images/info/logo.png"></div>
+           <div><img class="autoimg" src="images/info/logo.png" style="padding-left: 10%"></div>
         </div>
         <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 40%;">
           <p style="font-size: 50px;color:#FFFFFF;padding-top:5%;padding-left: 5% ">
@@ -63,7 +67,7 @@
           </p>
         </div>
         <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 30%;">
-          <div><img class="autoimg" src="images/info/phone.png" style="padding-top:4%;padding-right: 5%"></div>
+          <div><img class="selfautoimg" src="images/info/phone.png" style="padding-top:15%;padding-left: 15%"></div>
         </div>
     </div>
     <ul class="layui-nav" style="background-color: #0099FF;opacity:0.7;">
@@ -73,69 +77,119 @@
       <li class="layui-nav-item"><a href="" style="color: #FFFFFF">特色营</a></li>
       <li class="layui-nav-item"><a href="" style="color: #FFFFFF">群营会</a></li>
       <li class="layui-nav-item"><a href="" style="color: #FFFFFF">营会团</a></li>
-    </ul> 
-
+    </ul>
   </div>
   <div class="body">
-    <div style="width: 100%;padding-left: 5%;">
-      <div class="layui-carousel" id="test10">
-        <div carousel-item="">
-          <div><img src="images/index/body1.jpg"></div>
-          <div><img src="images/index/body2.jpg"></div>
-        </div>
-      </div>
-    </div>
-
-   <div class="row" style="margin: 0">
-      <div class= "text-center" style="width: 150px;height: 58px;background-color: #01AAED;padding-top: 10px;margin-top:20px;">
-        <p style="font-size: 24px;">营地介绍</p>
-      </div>
-    </div>
-
     <div>
-      <hr style="width: 100%;height: 5px;background-color: #5FB878;margin: 0;">
+      <img class="autoimg" src="images/info/product1.jpg">
     </div>
+    <div style="text-align: center;padding-top: 5%;padding-bottom: 3%;">
+      <p style="font-size: 48px;color:#FFFFFF;">
+        营地介绍
+      </p>
+    </div>
+    <div style="background: url('https://www.hattonstar.com/gfc/line.png');height: 5px;"></div>
 
-    <div class = "layui-row">
-      <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 55%;">
+    <div class = "layui-row" style="padding-top: 3%">
+      <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 35%;">
         <div class="layui-row">
-          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+          <div class="layui-col-md6">
+             <div><img src="images/info/1.jpg" style="margin: 2px;"></div>
+          </div>
+          <div class="layui-col-md6">
              <div><img src="images/info/2.jpg" style="margin: 2px;"></div>
           </div>
-          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-              <div><img src="images/info/2.jpg" style="margin: 2px;"></div>
+              <div class="layui-col-md6">
+             <div><img src="images/info/3.jpg" style="margin: 2px;"></div>
           </div>
-          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
-              <div><img src="images/info/4.jpg" style="margin: 2px;"></div>
+          <div class="layui-col-md6">
+             <div><img src="images/info/4.jpg" style="margin: 2px;"></div>
           </div>
-          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-              <div><img src="images/info/4.jpg" style="margin: 2px;"></div>
-          </div>
-          <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-              <div><img src="images/info/6.jpg" style="margin: 2px;"></div>
-          </div>
-
         </div>
       </div>
-      <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 45%;">
+      <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 65%;padding-left: 2%">
         <div>
-         <p style="font-size: 18px;">
+         <p style="font-size: 22px;color: #FFFFFF;">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;游美营地教育 / YMCE Group成立于2010年，相继成为美国营地协会（ACA）和国际营地协会（ICF）的双成员，中国营地教育联盟（CCEA）发起人理事单位。作为一家总部位于北京的国际营地教育机构，2016年，游美收获爆炸式增长，分别于国内千岛湖、上海、北京成立3家自建营地。2017年底，游美公司获得国内知名机构投资，成为行业内一致认可的头部企业。</p>
-         <p style="font-size: 18px;">
+         <p style="font-size: 22px;color: #FFFFFF;">
            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2018年，未来营推出“重新定义营地教育”计划，重磅打造YSS游美环球滑雪学院和游美Discovery环球探索团，致力于更好地培养中国孩子成为具有国际化视野和竞争力的青少年。 8年来，未来营与美、加等国50多个TOP顶级营地建立了战略合作关系，组织了近万名中国青少年赴海外或国内自建营地参加夏令营和游学等活动，得到了孩子和家长的高度认可与好评。
          </p>
         </div>
       </div>
     </div>
-   <div class="row" style="margin: 0">
-      <div class= "text-center" style="width: 150px;height: 58px;background-color: #FFB800;padding-top: 10px;margin-top:20px;color: white;">
-        <p style="font-size: 24px;">联系方式</p>
+    <div style="text-align: center;padding-top: 5%;padding-bottom: 3%;">
+      <p style="font-size: 48px;color:#FFFFFF;">
+        精品营地
+      </p>
+    </div>
+    <div style="background: url('https://www.hattonstar.com/gfc/line.png');height: 5px;"></div>
+
+    <div id="demo" class="carousel slide" data-ride="carousel">
+     
+      <!-- 轮播图片 -->
+      <div class="carousel-inner  " style="padding-top: 2%;">
+        <div class="carousel-item active">
+          <div class="layui-row">
+            <div class="layui-col-xs3">
+              <div style="margin: 2px;"><img class="autoimg" src="images/info/lunbo1.png"></div>
+            </div>
+            <div class="layui-col-xs3">
+              <div style="margin: 2px;"><img class="autoimg" src="images/info/lunbo2.png"></div>
+            </div>
+            <div class="layui-col-xs3">
+              <div style="margin: 2px;"><img class="autoimg" src="images/info/lunbo3.png"></div>
+            </div>
+            <div class="layui-col-xs3">
+              <div style="margin: 2px;"><img class="autoimg" src="images/info/lunbo4.png"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <!-- 左右切换按钮 -->
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+     
+    </div>
+
+    <div class="end" style="padding-top: 5%;">
+      <div style="background-color: #333333;opacity:0.8;">
+        <div style="text-align: center;padding-top: 3%;padding-bottom: 3%;">
+          <p style="font-size: 32px;color:#FFFFFF;">
+            —— 联系我们 ——
+          </p>
+        </div>
+        <div class="layui-row">
+          <div class="layui-col-md4" style="width: 40%;padding-left: 5%;padding-bottom: 5%;">
+            <p style="font-size: 28px;color:#CCCCCC;">
+             电话：(010）64173809
+            </p>
+            <p style="font-size: 28px;color:#CCCCCC;">
+              邮箱：darius@ymcegroup.com
+            </p>
+            <p style="font-size: 28px;color:#CCCCCC;">
+              网址：http://www.ymcegroup.com
+            </p>
+            <p style="font-size: 28px;color:#CCCCCC;">
+              地址：河南省许昌市建业绿色基地
+            </p>
+
+          </div>
+          <div class="layui-col-md4" style="width: 30%">
+
+          </div>
+          <div class="layui-col-md4" style="width: 30%">
+
+          </div>
+        </div>
       </div>
     </div>
 
-    <div>
-      <hr style="width: 100%;height: 5px;background-color: #5FB878;margin: 0;">
-    </div>
+
 
     <div class = "layui-row">
       <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 35%;">
@@ -156,30 +210,15 @@
           <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 10%;">
              <div><img class="fiximg" src="images/info/phone.png"></div>
           </div>
-          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 90%;">
-            <p style="font-size: 30px;padding-bottom: 10px;">
-              (010）64173809
-            </p>
-          </div>
         </div>
         <div class="layui-row">
           <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 10%;">
              <div><img class="fiximg" src="images/info/mail.png"></div>
           </div>
-          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 90%;">
-            <p style="font-size: 30px;padding-bottom: 10px; ">
-              darius@ymcegroup.com
-            </p>
-          </div>
         </div>
         <div class="layui-row">
           <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 10%;">
              <div><img class="fiximg" src="images/info/net.png"></div>
-          </div>
-          <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 90%;">
-            <p style="font-size: 30px;padding-bottom: 10px;  ">
-              http://www.ymcegroup.com/
-            </p>
           </div>
         </div>
         <div class="layui-row">
@@ -194,18 +233,6 @@
     </div>
 
     
-
-   <div class="row" style="margin: 0">
-      <div class= "text-center" style="width: 150px;height: 58px;background-color: #FF5722;padding-top: 10px;margin-top:20px;color: white;">
-        <p style="font-size: 24px;">热门活动</p>
-      </div>
-    </div>
-
-    <div>
-      <hr style="width: 100%;height: 5px;background-color: #5FB878;margin: 0;">
-    </div>
-    <div id="Good_Div">
-  </div>
 
   <div class="tail" style="background:url(images/index/u264.png);height: 300px;">
     <div class="row" style="padding-left: 23%;padding-top: 10px;">
@@ -298,6 +325,75 @@
       initMap();
 
 
+//////////////////////
+
+
+layui.use(['carousel', 'form'], function(){
+  var carousel = layui.carousel
+  ,form = layui.form;
+  
+  //常规轮播
+  carousel.render({
+    elem: '#test1'
+    ,arrow: 'always'
+  });
+  
+  //改变下时间间隔、动画类型、高度
+  carousel.render({
+    elem: '#test2'
+    ,interval: 1800
+    ,anim: 'fade'
+    ,height: '1800px'
+  });
+  
+  //设定各种参数
+  var ins3 = carousel.render({
+    elem: '#test3'
+  });
+  //图片轮播
+  carousel.render({
+    elem: '#test10'
+    ,width: '778px'
+    ,height: '440px'
+    ,interval: 5000
+  });
+  
+  //事件
+  carousel.on('change(test4)', function(res){
+    console.log(res)
+  });
+  
+  var $ = layui.$, active = {
+    set: function(othis){
+      var THIS = 'layui-bg-normal'
+      ,key = othis.data('key')
+      ,options = {};
+      
+      othis.css('background-color', '#5FB878').siblings().removeAttr('style'); 
+      options[key] = othis.data('value');
+      ins3.reload(options);
+    }
+  };
+  
+  //监听开关
+  form.on('switch(autoplay)', function(){
+    ins3.reload({
+      autoplay: this.checked
+    });
+  });
+  
+  $('.demoSet').on('keyup', function(){
+    var value = this.value
+    ,options = {};
+    if(!/^\d+$/.test(value)) return;
+    
+    options[this.name] = value;
+    ins3.reload(options);
+  });
+  
+});
+
+//////////////
 
     function setDiv(item){
       var div = '<div class="p-2 flex-fill">'
