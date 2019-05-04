@@ -52,27 +52,27 @@
  <div class="container">
   <div class="header">
     <div class="logo" style="text-align: center;">
-      <img src="images/index/u6.png" class="rounded" alt="Cinque Terre" width="78" height="79"> 
+      <img src="images/index/logo1.png" class="rounded" alt="Cinque Terre" style="width: 20%;height: 20%;padding-top: 5%"> 
     </div>
     <nav class="justify-content-center navbar navbar-expand-sm bg-light navbar-light" style="margin: 0 auto;background-color: white !important;padding-top: 20px;">
       <ul class="navbar-nav" >
-        <li class="nav-item active ">
+        <li class="nav-item">
           <a class="nav-link" href="nev.html">首页</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="home.html">国内营</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">海外营</a>
+          <a class="nav-link" href="abroad.html">海外营</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="custom.html">特色营</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="info2.html">群营会</a>
+          <a class="nav-link" href="camps.html">群营会</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="info2.html">营会团</a>
+          <a class="nav-link" href="">营会团</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">关于我们</a>
@@ -114,12 +114,56 @@
 
   <script>
 
+function addCategory() {
+    layer.open({
+        title:'<img src="{sh::RES}image/add.gif"> 添加分类',
+        type: 2,
+        area: ['700px', '530px'],
+        fix: false, //不固定
+        maxmin: true,
+        content: 'lunbo.html',
+        success:function(layero,index){
+        },
+        end:function(){
+            var handle_status = $("#handle_status").val();
+            if ( handle_status == '1' ) {
+                layer.msg('添加成功！',{
+                    icon: 1,
+                    time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                },function(){
+                    history.go(0);
+                });
+            } else if ( handle_status == '2' ) {
+                layer.msg('添加失败！',{
+                    icon: 2,
+                    time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                },function(){
+                    history.go(0);
+                });
+            }
+        }
+    });
+}
+
+
 layer.open({
   type: 2,
   area: ['600px', '650px'],
   skin: 'layui-layer-rim', //加上边框
-  content: ['question.html', 'no']
-});
+  content: ['question11111.html', 'no'],
+  btn: ['确定','关闭'],
+  yes: function(index, layero){ //或者使用btn1
+            var body = layer.getChildFrame('body', index);
+            var iframeWin = window[layero.find('iframe')[0]['name']];
+            var data = iframeWin.test();
+            console.log(data);
+            layer.close(index);
+        },
+  cancel: function(index){ //或者使用btn2
+    console.log(333);
+  }
+  });
+
 
   </script> 
 </body>

@@ -21,47 +21,46 @@
   <legend>营地问卷调查</legend>
 </fieldset>
  
-<form class="layui-form" action="" lay-filter="example">
+<form class="layui-form" action="" lay-filter="example" id = "hubin">
   <div class="layui-form-item">
     <label class="layui-form-label" style="text-align: left;width: 250px;">您是小男孩还是小女孩</label>
     <div class="layui-input-block">
-      <input type="radio" name="sex2" value="男" title="男孩" checked="">
-      <input type="radio" name="sex2" value="女" title="女孩">
+      <input type="radio" name="sex" value="1" title="男孩" checked="">
+      <input type="radio" name="sex" value="0" title="女孩">
     </div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label" style="text-align: left;width: 250px;">您喜欢国内营地还是海外营地？</label>
     <div class="layui-input-block">
-      <input type="radio" name="sex" value="国内" title="国内" checked="">
-      <input type="radio" name="sex" value="海外" title="海外">
+      <input type="radio" name="abroad" value="1" title="国内" checked="">
+      <input type="radio" name="abroad" value="0" title="海外">
     </div>
   </div>
 
   <div class="layui-form-item">
     <label class="layui-form-label" style="text-align: left;width: 250px;">您喜欢省外游还是周边游？</label>
     <div class="layui-input-block">
-      <input type="radio" name="sex1" value="国内" title="省外" checked="">
-      <input type="radio" name="sex1" value="海外" title="周边">
+      <input type="radio" name="area" value="1" title="省外" checked="">
+      <input type="radio" name="area" value="0" title="周边">
     </div>
   </div>
   
   <div class="layui-form-item">
     <label class="layui-form-label" style="text-align: left;width: 100%;">您的平时的兴趣爱好有哪些？</label>
     <div class="layui-input-block">
-      <input type="checkbox" name="like[write]" title="足球">
-      <input type="checkbox" name="like[read]" title="过山车">
-      <input type="checkbox" name="like[daze]" title="潜水">
-      <input type="checkbox" name="like[write1]" title="足球">
-      <input type="checkbox" name="like[read1]" title="登山">
-      <input type="checkbox" name="like[daze2]" title="人文">
-      <input type="checkbox" name="like[daze3]" title="宅在家中">
+      <input type="checkbox" name="like[football]" title="足球">
+      <input type="checkbox" name="like[car]" title="过山车">
+      <input type="checkbox" name="like[swim]" title="潜水">
+      <input type="checkbox" name="like[climb]" title="登山">
+      <input type="checkbox" name="like[read]" title="人文">
+      <input type="checkbox" name="like[home]" title="宅在家中">
     </div>
   </div>
 
   <div class="layui-form-item">
     <label class="layui-form-label" style="text-align: left;width: 250px;">您最希望前往的城市是？</label>
     <div class="layui-input-block" style="width:60%">
-      <input type="text" name="username1" lay-verify="title" autocomplete="off" placeholder="选填" class="layui-input">
+      <input type="text" name="city" lay-verify="title" autocomplete="off" placeholder="选填" class="layui-input" id = "city">
     </div>
   </div>
  
@@ -74,6 +73,11 @@
           
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 <script>
+
+  var data_tmp;
+    function test(){
+    $('#demo1').submit();
+  }
 layui.use(['form', 'layedit', 'laydate'], function(){
   var form = layui.form
   ,layer = layui.layer
@@ -94,9 +98,9 @@ layui.use(['form', 'layedit', 'laydate'], function(){
   //自定义验证规则
   form.verify({
     title: function(value){
-      if(value.length < 5){
-        return '标题至少得5个字符啊';
-      }
+      // if(value.length < 5){
+      //   return '标题至少得5个字符啊';
+      // }
     }
     ,pass: [
       /^[\S]{6,12}$/
@@ -117,11 +121,19 @@ layui.use(['form', 'layedit', 'laydate'], function(){
   
   //监听提交
   form.on('submit(demo1)', function(data){
-    layer.alert(JSON.stringify(data.field), {
-      title: '最终的提交信息'
-    })
+    console.log(data.field);
+    // layer.alert(JSON.stringify(data.field), {
+    //   title: '最终的提交信息'
+    // })
+    
+    // var index = parent.layer.getFrameIndex(window.name);
+    // parent.layer.close(index);
+    data_tmp = data.field;
+    console.log(data_tmp);
     return false;
   });
+
+
  
   //表单初始赋值
   form.val('example', {

@@ -1,38 +1,86 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>国内营</title>
-    <script type="text/javascript" src="jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="bootstrap/js/popper.min.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
-  <style type="text/css">
-    html{width:100%px;height:100%;margin:0px;padding:0px;}
-    body{
-      background-color:#03AF7A;
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    *{
+      margin: 0px;
+      padding: 0px;   }     
+    /*相框背景*/
+    #all{
+      width: 800px;
+      height: 800px;
+      background: greenyellow;
+      position: relative;
+      /*父元素必须定位，否则无法约束子元素*/
     }
-  </style>
+    
+    /*相册大图*/
+    #all ul li .big img{
+      width: 500px;
+      height: 400px;
+    }
+    #all ul li .big{
+    position: absolute;
+    left: 70px;
+    top: 130px;
+    display: none;/*内部样式中隐藏大图所在div*/
+    }
+    
+    /*小图设置*/
+    #all ul li .smallhover img{
+      width: 70px;
+      height: 50px;
+        position: absolute; 
+        right: 100px; 
+        float: left;/*设置浮动，可使图片排成一列*/
+    
+    }
+ 
+    #all ul li .smallhover{
+      /*因为小照片放在span标签中，变成内联元素。设置display: block;将其转换为块级元素，才能设置图片外边距*/
+      display: block; 
+      margin-top: 40px;
+      overflow: hidden;
+    }
+  
+    /*实现效果，鼠标悬浮在小图片时，相应的大图片显示*/
+    #all ul li:hover .big{
+      display: block;
+    }
+    
+    </style>
+  </head>
+  <body>
+    <button type="button" rel="drevil" data-content="报名截止时间：'+time+'" data-container="body" data-toggle="popover" data-placement="bottom"></button>
 
-</head>
+      <script>
+$(function () { $("[data-toggle='popover']").popover(); });　　　　
 
-<body>
-  <div class="container" style="text-align: center;padding: 30px;">
-    <div class="body">
-      <div class="carousel-item active">
-        <img class="img-fluid" src="images/123.png">
-      </div>
-    </div>
-  </div>
+　　  $("[rel=drevil]").popover({
+                      trigger:'manual',
+                      //placement : 'bottom', //placement of the popover. also can use top, bottom, left or right
+                      //天title : '<div style="text-align:center; color:red; text-decoration:underline; font-size:14px;"> Muah ha ha</div>', //this is the top title bar of the popover. add some basic css
+                      html: 'true', //needed to show html of course
+                      //content : '<div id="popOverBox"><img src="http://www.hd-report.com/wp-content/uploads/2008/08/mr-evil.jpg" width="251" height="201" /></div>', //this is the content of the html box. add the image here or anything you want really.
+                      animation: false
+                  }).on("mouseenter", function () {
+                      var _this = this;
+                      $(this).popover("show");
+                      $(this).siblings(".popover").on("mouseleave", function () {
+                          $(_this).popover('hide');
+                      });
+                  }).on("mouseleave", function () {
+                      var _this = this;
+                      setTimeout(function () {
+                          if (!$(".popover:hover").length) {
+                              $(_this).popover("hide")
+                          }
+                      }, 300);
+                  });
 
-  <audio autoplay>
-    <source src="https://www.yztcc.com/luyin1.m4a" type="audio/mpeg">
-  </audio>
-</body>
+
+  </script> 
+  </body>
 </html>
