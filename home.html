@@ -289,7 +289,7 @@
   </div>
 
   <div style="text-align: center;padding-top: 2%">
-    <div id="demo7"></div>
+    <div id="test1"></div>
   </div>
 
 
@@ -324,7 +324,7 @@
   </div>
 
   <script type="text/javascript">
-    var length = 0;
+    var myPages =new Array();
     function setDiv(item){
       var div = '<div class="p-2 flex-fill">'
           + '<img src='
@@ -363,54 +363,219 @@
           + item.title_pic
       return url;
     } 
-    $(document).ready(function(){
-        $.ajax({
-          type:'POST',
-          url:'https://www.hattonstar.com/getCampactivities',
-          dataType:'json',
-          success:function(data){
-            var length = data.length;
-            var row =  Math.ceil(length / 3);
-            var remainder = length % 3;
-            var html = "";
-            for( var i = 0; i < length; i++ ) {
-                if (i%3==0) {
-                  html += '<div class="d-flex" style="height: 330px;">';
-                }
-                html += setDiv(data[i]);
-                if (i%3==2) {
-                  html += '</div>';
-                }
-            }
-            if (remainder) {
-              var num = 3 - remainder;
-              for (var i = 0; i < num; i++) {
-                html += setUnDiv();
-              }
-               html += '</div>';
-            }
-            console.log(html);
-            $("#Good_Div").html(html);
-          },
-          error:function(hex){
-            alert("错误返回");
-          }
-        })      
-    })
 
-    layui.use(['laypage', 'layer'], function(){
-      var laypage = layui.laypage
-      ,layer = layui.layer;
+    //普通
+    // $(document).ready(function(){
+    //     $.ajax({
+    //       type:'POST',
+    //       url:'https://www.hattonstar.com/getCampactivities',
+    //       dataType:'json',
+    //       success:function(data){
+    //         var length = data.length;
+    //         var row =  Math.ceil(length / 3);
+    //         var remainder = length % 3;
+    //         var html = "";
+    //         for( var i = 0; i < length; i++ ) {
+    //             if (i%3==0) {
+    //               html += '<div class="d-flex" style="height: 330px;">';
+    //             }
+    //             html += setDiv(data[i]);
+    //             if (i%3==2) {
+    //               html += '</div>';
+    //             }
+    //         }
+    //         if (remainder) {
+    //           var num = 3 - remainder;
+    //           for (var i = 0; i < num; i++) {
+    //             html += setUnDiv();
+    //           }
+    //            html += '</div>';
+    //         }
+    //         console.log(html);
+    //         $("#Good_Div").html(html);
+    //       },
+    //       error:function(hex){
+    //         alert("错误返回");
+    //       }
+    //     })      
+    // })
+    //分页1，先全部缓存，再分页
+//   $(document).ready(function(){
+//   $.ajax({
+//     type:'POST',
+//     url:'https://www.hattonstar.com/getCampactivities',
+//     dataType:'json',
+//     success:function(data){
+//       var length = data.length;
+//       var pagesize = Math.ceil(length / 9);
+//       var leftPageContentSize = length % 9;
+//       for (var i = 0; i < pagesize - 1; i++){
+//         var pageHtml = "";
+//         for (var j = 0; j < 9; j++) {
+//           var index = j + i*9;
+//           if (index%3==0) {
+//             pageHtml += '<div class="d-flex" style="height: 330px;">';
+//           }
+//           pageHtml += setDiv(data[index]);
+//           if (index%3==2) {
+//             pageHtml += '</div>';
+//           }
+//         }
+//         myPages[i] = pageHtml;
+//       }
+//       var pageHtml = "";
+//       if (leftPageContentSize) {
+//         console.log("leftPageContentSize");
+//         console.log(leftPageContentSize);
+//          var row =  Math.ceil(leftPageContentSize / 3);
+//          var remainder = leftPageContentSize % 3;
+//           for (var j = 0; j < leftPageContentSize; j++) {
+//           var index = j + (pagesize -1)*9;
+//           if (index%3==0) {
+//             pageHtml += '<div class="d-flex" style="height: 330px;">';
+//           }
+//           pageHtml += setDiv(data[index]);
+//           if (index%3==2) {
+//             pageHtml += '</div>';
+//           }
+//         }
+//         if (remainder) {
+//           var num = 3 - remainder;
+//           for (var i = 0; i < num; i++) {
+//             pageHtml += setUnDiv();
+//           }
+//            pageHtml += '</div>';
+//         }
+//         myPages[pagesize -1] = pageHtml;
+//       }else{
+//           for (var j = 0; j < 9; j++) {
+//           var index = j + (pagesize -1)*9;
+//           if (index%3==0) {
+//             pageHtml += '<div class="d-flex" style="height: 330px;">';
+//           }
+//           pageHtml += setDiv(data[index]);
+//           if (index%3==2) {
+//             pageHtml += '</div>';
+//           }
+//         }
+//         myPages[pagesize -1] = pageHtml;
+//       }
+
+//     layui.use('laypage', function(){
+//       var laypage = layui.laypage;
       
-      laypage.render({
-        elem: 'demo7'
-        ,count: length
-        ,layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
-        ,jump: function(obj){
-          console.log(obj)
+//       laypage.render({
+//         elem: 'test1'
+//         ,count: myPages.length //数据总数，从服务端得到
+//         ,limit:1
+//         ,jump: function(obj, first){
+//           //obj包含了当前分页的所有参数，比如：
+//           console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+//           console.log(obj.limit); //得到每页显示的条数
+          
+//           //首次不执行
+//           if(!first){
+//              html = myPages[obj.curr -1];
+//              $("#Good_Div").html(html);
+//           }else{
+//             html = myPages[0];
+//              $("#Good_Div").html(html);
+//           }
+//         }
+//       });
+// });
+//     },
+//     error:function(hex){
+//       alert("错误返回");
+//     }
+//   })      
+// });
+
+//分页2，先分页，再分页缓存显示
+
+  $(document).ready(function(){
+  $.ajax({
+    type:'POST',
+    url:'https://www.hattonstar.com/getCampactivities',
+    dataType:'json',
+    success:function(data){
+      var length = data.length;
+      var pagesize = Math.ceil(length / 9);
+      var leftPageContentSize = length % 9;
+      for (var i = 0; i < pagesize - 1; i++){
+        var myIndexes = new Array();
+        for (var j = 0; j < 9; j++) {
+          var index = j + i*9;
+          myIndexes[j] = index;
         }
-      });
+        myPages[i] = myIndexes;
+      }
+      var myIndexes = new Array();
+      for (var j = 0; j < leftPageContentSize; j++) {
+        var index = j + (pagesize -1)*9;
+        myIndexes[j] = index;
+      }
+      myPages[pagesize -1] = myIndexes;
+
+
+      layui.use('laypage', function(){
+        var laypage = layui.laypage;
+        
+        laypage.render({
+          elem: 'test1'
+          ,count: myPages.length //数据总数，从服务端得到
+          ,limit:1
+          ,jump: function(obj, first){
+            //obj包含了当前分页的所有参数，比如：
+            console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+            console.log(obj.limit); //得到每页显示的条数
+            
+            if (obj.curr != myPages.length) {
+              var myIndex = myPages[obj.curr -1];
+              var pageHtml = "";
+              for (var j = 0; j < 9; j++) {
+                var index = myIndex[j];
+                if (index%3==0) {
+                  pageHtml += '<div class="d-flex" style="height: 330px;">';
+                }
+                pageHtml += setDiv(data[index]);
+                if (index%3==2) {
+                  pageHtml += '</div>';
+                }
+              }
+              $("#Good_Div").html(pageHtml);
+            }else{
+                var myIndex = myPages[obj.curr -1];
+                var pageHtml = "";
+                var remainder = myIndex.length % 3;
+                for (var j = 0; j < myIndex.length; j++) {
+                var index = j + (pagesize -1)*9;
+                if (index%3==0) {
+                  pageHtml += '<div class="d-flex" style="height: 330px;">';
+                }
+                pageHtml += setDiv(data[index]);
+                if (index%3==2) {
+                  pageHtml += '</div>';
+                }
+              }
+              if (remainder) {
+                var num = 3 - remainder;
+                for (var i = 0; i < num; i++) {
+                  pageHtml += setUnDiv();
+                }
+                 pageHtml += '</div>';
+              }
+               $("#Good_Div").html(pageHtml);
+            }
+          }
+        });
     });
+    },
+    error:function(hex){
+      alert("错误返回");
+    }
+  })      
+});
 
     
   </script>
