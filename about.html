@@ -7,12 +7,14 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>国内营</title>
+  <title>关于我们</title>
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="bootstrap/js/popper.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./layui/layui.all.js"></script>
 
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
   <style type="text/css">
     html{width:100%px;height:100%;margin:0px;padding:0px;}
     body{
@@ -35,12 +37,25 @@
       width: 80%;
       margin-left: 10%;
     }
-
+    .autoimg
+    {
+      width:auto;height:auto;max-width:90%;max-height:90%;
+    }
+    .autoimgex
+    {
+      width:auto;height:auto;max-width:70%;max-height:70%;
+    }
     .middle {
        float: none;
        display: inline-block;
        vertical-align: middle;
      }
+    .input_normal{
+      margin-bottom: 4%;
+      background-color: #D7D7D7;
+      color:#33333;
+      height: 60px;
+    }
     }
   </style>
 
@@ -48,7 +63,7 @@
 
 <body>
  <div class="container">
-  <div class="header" style="background: url('https://www.hattonstar.com/gfc/about.png');height: 1000px;">
+  <div class="header">
     <div class="logo" style="text-align: center;">
      <img src="images/index/logo1.png" class="rounded" alt="Cinque Terre" style="width: 20%;height: 20%;padding-top: 5%"> 
     </div>
@@ -69,16 +84,72 @@
         <li class="nav-item">
           <a class="nav-link" href="camps.html">群营会</a>
         </li>
-        <li class="nav-item">
+<!--         <li class="nav-item">
           <a class="nav-link" href="">营会团</a>
-        </li>
+        </li> -->
         <li class="nav-item active">
           <a class="nav-link" href="about.html">关于我们</a>
         </li>
       </ul>
   </nav>
   </div>
+  <div style="text-align: center;">
+    <img src="images/about/u2.jpg"  style="width:auto;height:auto;width:100%;height:100%;margin-top:-15px"> 
+  </div>
 
+  <div style="padding: 2%;padding-top: 5%">
+    <div class="layui-row">
+      <div class="layui-col-xs6" style="width: 40%">
+        <div><img class="autoimg" src="images/about/u6.png" style="margin-top: 40%"></div>
+      </div>
+      <div class="layui-col-xs6"  style="width: 60%">
+        <div style="padding-left: 10%;padding-bottom: 6%">
+          <p style="font-size: 36px;color: #666666;">关于我们/ABOUT US</p>
+        </div>
+        <div>
+          <p style="font-size: 20px;color: #666666;padding-bottom: 3%">GIF 少年行.未来营 旨在链接未来教育，建立优质营地生态，助力营地信息系统，提升营地原动力，扩大营地影响力。</p>
+          <p style="font-size: 20px;color: #666666;padding-bottom: 3%">GIF 少年行.未来营 遵循知于体验、行与未来的企业信仰，以实践育人为导向，凸显非正式教育的体验优势，因材施教，帮助孩子们更深度更高层次的进行知识建构。</p>
+          <p style="font-size: 20px;color: #666666;padding-bottom: 3%">GIF 少年行.未来营 的使命：未来教育先锋，少年成长平台通过沟通与合作、创造性与问题解决、信息素养、自我认识与自我调控、批判性思维、学会学习与终身学习以及公民责任与社会参与，从而实现21世纪核心素养。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding-top: 5%;text-align: center;">
+    <p style="font-size: 36px;color: #666666;">联系我们/CONTACT US</p>
+    <p style="font-size: 18px;color: #666666;padding-top: 2%">在您的建议与帮助下，未来营将会变得越来越好！</p>
+    <p style="font-size: 18px;color: #666666;">With your advice and help, the future battalion will become better and better!</p>
+  </div>
+
+  <div style="padding: 2%;padding-top: 5%">
+    <div class="layui-row">
+      <div class="layui-col-xs6" style="width: 45%;padding-right: 5%">
+        <input type="text" class="form-control input_normal" id="naem" placeholder="名字/Name">
+        <input type="email" class="form-control input_normal" id="email" placeholder="邮箱/E-mail">
+        <input type="text" class="form-control input_normal" id="phone" placeholder="电话/Telephone">
+        <input type="text" class="form-control input_normal" id="phone" placeholder="留言/Message" style="padding-bottom: 200px;padding-top: 30px;">
+        <button type="button" class="btn" style="background-color: #990000;color: #FFFFFF">提交/Message</button>
+      </div>
+      <div class="layui-col-xs6" style="width:55%;text-align: center;">
+        <div class="layui-row" style="padding-top: 5%;padding-right: 5%">
+          <div class="layui-col-xs6" style="width:50%">
+            <div><img class="autoimgex" src="images/about/u50.jpg"></div>
+            <div style="text-align: center;padding-top: 2%"><p>扫一扫关注公众号</p></div>
+          </div>
+          <div class="layui-col-xs6" style="width:50%">
+            <div><img class="autoimgex" src="images/about/u52.png"></div>
+            <div style="text-align: center;padding-top: 2%"><p>扫一扫添加小程序</p></div>
+          </div>
+        </div>
+        <div style="text-align: left;padding-left: 10%;padding-top: 10%">
+          <p style="font-size: 18px;color: #666666;padding-bottom: 3%">电话：0374—123456</p>
+          <p style="font-size: 18px;color: #666666;padding-bottom: 3%">邮箱：www.weilaiying@163.com</p>
+          <p style="font-size: 18px;color: #666666;padding-bottom: 3%">网址：www.weilaiying.com</p>
+          <p style="font-size: 18px;color: #666666;">地址：河南省许昌市建业绿色基地</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <script type="text/javascript">
 
