@@ -7,12 +7,14 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>海外营</title>
+  <title>生存营</title>
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="bootstrap/js/popper.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./layui/layui.all.js"></script>
 
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
   <style type="text/css">
     html{width:100%px;height:100%;margin:0px;padding:0px;}
     body{
@@ -54,13 +56,13 @@
     </div>
     <nav class="justify-content-center navbar navbar-expand-sm bg-light navbar-light" style="margin: 0 auto;background-color: white !important;padding-top: 20px;">
       <ul class="navbar-nav" >
-        <li class="nav-item active ">
+        <li class="nav-item">
           <a class="nav-link" href="index.html">首页</a>
         </li>
          <li class="nav-item">
           <a class="nav-link" href="nature.html">自然营</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="survive.html">生存营</a>
         </li>
         <li class="nav-item">
@@ -89,24 +91,20 @@
         <li data-target="#demo" data-slide-to="1"></li>
         <li data-target="#demo" data-slide-to="2"></li>
         <li data-target="#demo" data-slide-to="3"></li>
-        <li data-target="#demo" data-slide-to="4"></li>
       </ul>
      
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="img-fluid" src="images/home/abroad1.jpg">
+          <img class="img-fluid" src="images/home/home1.jpg">
         </div>
         <div class="carousel-item">
-          <img class="img-fluid" src="images/home/abroad2.jpg">
+          <img class="img-fluid" src="images/home/home2.jpg">
         </div>
         <div class="carousel-item">
-          <img class="img-fluid" src="images/home/abroad3.jpg">
+          <img class="img-fluid" src="images/home/home3.jpg">
         </div>
         <div class="carousel-item">
-          <img class="img-fluid" src="images/home/abroad4.jpg">
-        </div>
-        <div class="carousel-item">
-          <img class="img-fluid" src="images/home/abroad5.jpg">
+          <img class="img-fluid" src="images/home/home4.jpg">
         </div>
       </div>
      
@@ -117,45 +115,70 @@
         <span class="carousel-control-next-icon"></span>
       </a>
     </div>
-    
-    <div>
-      <div class="row" style="padding-top: 55px;">
-        <div class="dropdown" style="padding-left: 150px;">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="width: 120px;">
-            世界
-          </button>
-          <div class="dropdown-menu" >
-            <a class="dropdown-item" href="#">北美</a>
-            <a class="dropdown-item" href="#">欧洲</a>
-            <a class="dropdown-item" href="#">东南亚</a>
-          </div>
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" style="width: 600px;">
-        </div>
-        <div>
-          <a href="#" class="btn btn-primary" role="button" style="width: 90px;">搜索</a>
-        </div>
-      </div>
+
+    <div style="text-align: center;padding-top: 20px;">
+      <strong style="color: orange;">
+        <text style="font-size: 30px;">▪</text>
+        <text style="font-size: 45px;">▪</text>
+        <text style="font-size: 66px;">▪</text>
+        <text style="font-size: 60px;">未来营·生存营</text>
+        <text style="font-size: 66px;">▪</text>
+        <text style="font-size: 45px;">▪</text>
+        <text style="font-size: 30px;">▪</text>
+      <p style="font-size: 20px;">
+     GFC 少年行·未来营  旨在链接未来教育，建立优质营地生态，助力营地信息系统，提升营地原动力，扩大营地影响力。
+     GFC 少年行·未来营  遵循知于体验、行于未来的企业信仰，以实践育人为导向，凸显非正式教育的体验优势，因材施教，帮助孩子们更深度更高层次的进行知识建构。
+      </p>
+      </strong>
     </div>
 
-      <div class="row" style="margin: 0">
-        <div class= "text-center" style="width: 150px;height: 58px;background-color: #FFDF25;padding-top: 10px;margin-top:20px;">
-          <p style="font-size: 24px;">人气营地</p>
-        </div>
-        <div class= "text-right" style="width: 150px;height: 58px;padding-top: 10px;margin-top:20px;margin-left: 70%;">
-          <!-- <a href = "#" style="font-size: 24px;">更多营地</a> -->
-        </div>
-      </div>
 
-      <div>
-        <hr style="width: 100%;height: 5px;background-color: #666600;margin: 0;">
+    <div class="row" style="margin: 0">
+      <div class= "text-center" style="width: 150px;height: 58px;background-color: #FFDF25;padding-top: 10px;margin-top:20px;">
+        <p style="font-size: 24px;">勇气营</p>
       </div>
-
-      <div id="Good_Div">
-
+      <div class= "text-right" style="width: 150px;height: 58px;padding-top: 10px;margin-top:20px;margin-left: 70%;">
+         <a href = "courage.html" style="font-size: 24px;">更多营地</a>
       </div>
+    </div>
+    <div>
+      <hr style="width: 100%;height: 5px;background-color: #666600;margin: 0;">
+    </div>
+    <div id="Good_Div_7"></div>
+
+    <div class="row" style="margin: 0">
+      <div class= "text-center" style="width: 150px;height: 58px;background-color: #FFDF25;padding-top: 10px;margin-top:20px;">
+        <p style="font-size: 24px;">野外求生</p>
+      </div>
+      <div class= "text-right" style="width: 150px;height: 58px;padding-top: 10px;margin-top:20px;margin-left: 70%;">
+         <a href = "field.html" style="font-size: 24px;">更多营地</a>
+      </div>
+    </div>
+    <div>
+      <hr style="width: 100%;height: 5px;background-color: #666600;margin: 0;">
+    </div>
+    <div id="Good_Div_8"></div>
+
+    <div class="row" style="margin: 0">
+      <div class= "text-center" style="width: 150px;height: 58px;background-color: #FFDF25;padding-top: 10px;margin-top:20px;">
+        <p style="font-size: 24px;">特色活动</p>
+      </div>
+      <div class= "text-right" style="width: 150px;height: 58px;padding-top: 10px;margin-top:20px;margin-left: 70%;">
+         <a href = "sport.html" style="font-size: 24px;">更多营地</a>
+      </div>
+    </div>
+    <div>
+      <hr style="width: 100%;height: 5px;background-color: #666600;margin: 0;">
+    </div>
+    <div id="Good_Div_9"></div>
+
   </div>
+
+  <div style="text-align: center;padding-top: 2%">
+    <div id="test1"></div>
+  </div>
+
+
   <div class="tail" style="background:url(images/index/u264.png);height: 300px;">
     <div class="row" style="padding-left: 23%;padding-top: 10px;">
       <div>
@@ -189,7 +212,8 @@
     </div>
   </div>
 
-    <script type="text/javascript">
+  <script type="text/javascript">
+    var myPages =new Array();
     function setDiv(item){
       var div = '<div class="p-2 flex-fill">'
           + '<img src='
@@ -228,11 +252,15 @@
           + item.title_pic
       return url;
     } 
-    $(document).ready(function(){
+
+    function initShow(id){
         $.ajax({
           type:'POST',
-          url:'https://www.hattonstar.com/getCampactivities',
+          url:'http://www.gfcamps.cn/getShowsByType',
           dataType:'json',
+            data:{
+            type_id : id
+          },
           success:function(data){
             var length = data.length;
             var row =  Math.ceil(length / 3);
@@ -255,15 +283,22 @@
                html += '</div>';
             }
             console.log(html);
-            $("#Good_Div").html(html);
+            var devname = "#Good_Div_" + id.toString();
+            $(devname).html(html);
           },
           error:function(hex){
             alert("错误返回");
           }
-        })      
-    })
+        }) 
+    }
 
-    
+    //不分页
+    $(document).ready(function(){
+        for (var i = 6 ; i < 9; i ++){
+          initShow(i+1);
+        }
+    })
+ 
   </script>
 </body>
 </html>

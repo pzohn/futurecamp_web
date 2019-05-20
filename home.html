@@ -60,7 +60,7 @@
           <a class="nav-link" href="index.html">首页</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="home.html">自然营</a>
+          <a class="nav-link" href="nature.html">自然营</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="abroad.html">生存营</a>
@@ -505,7 +505,7 @@
   $(document).ready(function(){
   $.ajax({
     type:'POST',
-    url:'https://www.hattonstar.com/getCampactivities',
+    url:'http://www.gfcamps.cn/getCampactivities',
     dataType:'json',
     success:function(data){
       var length = data.length;
