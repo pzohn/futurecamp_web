@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>详细介绍</title>
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./layui/layui.all.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
+  <style type="text/css">
+    html{width:100%;height:100%;margin:0px;padding:0px;}
+    body{
+      background-color:#fff;
+    }
+    li{
+      margin: 0 10px;
+    }
+    .layui-tab-title li{
+      width: 15%;
+    }
+    .jumbotron{
+      margin-bottom: 0px !important;
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+      background: #669900;
+      border-radius: 0px;
+    }
+    .img-thumbnail{
+      border: 0px;
+    }
+    .layui-timeline-title{
+      color: #ffaa00 !important;
+    }
+    .layui-timeline-title_p{
+      color: #ffaa00 ;
+    }
+    }
+  </style>
+
+</head>
+
+<body>
+ <div class="container">
+  <div class="header">
+    <div class="logo" style="text-align: center;">
+      <img src="images/index/logo1.png" class="rounded" alt="Cinque Terre" style="width: 20%;height: 20%;padding-top: 5%"> 
+    </div>
+    <nav class="justify-content-center navbar navbar-expand-sm bg-light navbar-light" style="margin: 0 auto;background-color: white !important;padding-top: 20px;">
+      <ul class="navbar-nav" >
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">首页</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="nature.html">自然营</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="survive.html">生存营</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="think.html">思辨营</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="science.html">科学营</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="humanism.html">人文营</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="camps.html">营会团</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">关于我们</a>
+        </li>
+      </ul>
+  </nav>
+  </div>
+  <div class="body">
+    <div style="width: 100%;padding-left: 5%;">
+<!--       <div class="layui-carousel" id="test10">
+        <div carousel-item="">
+          <div><img src="images/home/header1.jpg"></div>
+          <div><img src="images/home/header2.jpg"></div>
+          <div><img src="images/home/header3.jpg"></div>
+          <div><img src="images/home/header4.jpg"></div>
+          <div><img src="images/home/header5.jpg"></div>
+        </div>
+      </div> -->
+    <div class="layui-carousel" id="test10"><div carousel-item=""><div><img src="http://www.gfcamps.cn/images/activity/201905191.jpg"></div><div><img src="http://www.gfcamps.cn/images/activity/201905192.jpg"></div><div><img src="http://www.gfcamps.cn/images/activity/201905193.jpg"></div></div></div>
+    </div>
+
+    <div>
+      <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title" style="text-align: center;">
+          <li class="layui-this">初心•出发</li>
+          <li >思考•未来</li>
+          <li >计划•征程</li>
+          <li >明细•费用</li>
+          <li >特别•关注</li>
+          <li >分享•同行</li>
+        </ul>
+        <div class="layui-tab-content">
+          <div class="layui-tab-item layui-show">
+            <div class="title" style="border: 1px solid #03AF7A;background
+            :rgba(3,175,122,.2);height: 40px;width: 100%;padding-left: 0px;padding-top: 8px;">
+              <span style="background: url(images/details/themai-tit.png) no-repeat 12px center;padding-left: 30px;">
+                初心•出发
+              </span>
+            </div>
+            <div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-left: 0px;padding-top: 0px;text-align: center;">
+              <div>
+               <img src="images/details/jieshao1.png" class="img-thumbnail" alt="Cinque Terre">
+              </div>
+              <div>
+               <img src="images/details/jieshao2.png" class="img-thumbnail" alt="Cinque Terre">
+              </div>
+              <div>
+               <img src="images/details/jieshao3.png" class="img-thumbnail" alt="Cinque Terre">
+              </div>
+              <div>
+               <img src="images/details/jieshao4.png" class="img-thumbnail" alt="Cinque Terre">
+              </div>
+              <div>
+               <img src="images/details/jieshao5.png" class="img-thumbnail" alt="Cinque Terre">
+              </div>
+              <div>
+               <img src="images/details/jieshao6.png" class="img-thumbnail" alt="Cinque Terre">
+              </div>
+            </div>
+          </div>
+          <div class="layui-tab-item" >
+            <div class="title" style="border: 1px solid #03AF7A;background
+            :rgba(3,175,122,.2);height: 40px;width: 100%;padding-left: 0px;padding-top: 8px;">
+              <span style="background: url(images/details/themai-tit.png) no-repeat 12px center;padding-left: 30px;">
+                思考•未来
+              </span>
+            </div>
+            <div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-left: 30px;padding-top: 0px;">
+              <ul class="layui-timeline">
+                <li class="layui-timeline-item">
+                  <i class="layui-icon layui-timeline-axis"></i>
+                  <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">Day 1</h3>
+                    <p class="layui-timeline-title_p">
+                      机场接机，营地入住
+                    </p>
+                    <div>
+                     <img src="images/details/richeng1.jpg" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                    <div>
+                     <img src="images/details/richeng2.jpg" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                  </div>
+                </li>
+                <li class="layui-timeline-item">
+                  <i class="layui-icon layui-timeline-axis"></i>
+                  <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">Day 2</h3>
+                    <p class="layui-timeline-title_p">
+                      全天营地活动
+                    </p>
+                    <br>· 绕绳速降+蹦床气球
+                    <br>· 射箭+独木舟
+                    <br>· 突击埋伏战
+                    <div>
+                     <img src="images/details/richeng3.jpg" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                    <div>
+                     <img src="images/details/richeng4.png" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                  </div>
+                </li>
+                <li class="layui-timeline-item">
+                  <i class="layui-icon layui-timeline-axis"></i>
+                  <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">Day 3</h3>
+                    <p class="layui-timeline-title_p">
+                      全天营地活动
+                    </p>
+                    <br>· 攀岩+纸箱挑战
+                    <br>· 击剑+急救
+                    <br>· 篝火晚会
+                    <div>
+                     <img src="images/details/richeng5.jpg" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                    <div>
+                     <img src="images/details/richeng6.jpg" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                  </div>
+                </li>
+                <li class="layui-timeline-item">
+                  <i class="layui-icon layui-timeline-axis"></i>
+                  <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">Day 4</h3>
+                    <p class="layui-timeline-title_p">
+                      全天营地活动
+                    </p>
+                    <br>· 空中大回环+空中爬梯
+                    <br>· 简易低空绳索+山地自行车
+                    <br>· 妙探寻踪
+                    <div>
+                     <img src="images/details/richeng7.jpg" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                    <div>
+                     <img src="images/details/richeng8.jpg" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                  </div>
+                </li>
+                <li class="layui-timeline-item">
+                  <i class="layui-icon layui-timeline-axis"></i>
+                  <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">Day 5</h3>
+                     <p class="layui-timeline-title_p">
+                      全天营地活动
+                    </p>
+                    <br>· 竹筏搭建+感官寻踪
+                    <br>· 体育运动+荒野生存
+                    <br>· 机器人大战
+                    <div>
+                     <img src="images/details/richeng9.jpg" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                    <div>
+                     <img src="images/details/richeng10.png" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                  </div>
+                </li>
+                <li class="layui-timeline-item">
+                  <i class="layui-icon layui-timeline-axis"></i>
+                  <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">Day 6</h3>
+                    <p class="layui-timeline-title_p">
+                      全天营地活动
+                    </p>
+                    <br>· 自然寻踪+定向越野
+                    <br>· 问题解决能力+四轮摩托
+                    <br>· 迪斯科舞会
+                    <div>
+                     <img src="images/details/richeng11.jpg" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                    <div>
+                     <img src="images/details/richeng12.png" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                  </div>
+                </li>
+                <li class="layui-timeline-item">
+                  <i class="layui-icon layui-timeline-axis"></i>
+                  <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">Day 7</h3>
+                    <p class="layui-timeline-title_p">
+                      返程日
+                    </p>
+                    <br>· 送机，搭乘航班返回中国
+                  </div>
+                </li>
+              </ul> 
+            </div>
+          </div>
+          <div class="layui-tab-item" >
+            <div class="title" style="border: 1px solid #03AF7A;background
+            :rgba(3,175,122,.2);height: 40px;width: 100%;padding-left: 0px;padding-top: 8px;">
+              <span style="background: url(images/details/themai-tit.png) no-repeat 12px center;padding-left: 30px;">
+                计划•征程
+              </span>
+            </div>
+            <div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-left: 30px;padding-top: 0px;">
+              <div class="layui-card-body">
+                <br>· 国家知识创新基地
+                <br>· 国家环保科普基地
+                <br>· 全国科学普及教育基地
+                <br>· 全国青少年科技教育基地
+                <br>· 全国5A级旅游景区
+                <br>· 云南省精品科普基地
+              </div>
+            </div>
+          </div>
+          <div class="layui-tab-item" >
+            <div class="title" style="border: 1px solid #03AF7A;background
+            :rgba(3,175,122,.2);height: 40px;width: 100%;padding-left: 0px;padding-top: 8px;">
+              <span style="background: url(images/details/themai-tit.png) no-repeat 12px center;padding-left: 30px;">
+                明细•费用
+              </span>
+            </div>
+            <div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-left: 30px;padding-top: 0px;">
+              <div class="layui-card-body">
+                <strong>
+                  费用
+                </strong>
+                <p style="color: red;">¥15000/人</p>
+                <br>
+                <strong>
+                  费用包含
+                </strong>
+                <p>
+                  · 项目费用；<br>
+                  · 英国境内住宿费用；<br>
+                  · 行程中所有早、午、晚餐费用；<br>
+                  · 英国境内地面交通费用；<br>                 
+                </p>
+                <br>
+                <strong>
+                  费用不包含
+                </strong>
+                <p>
+                  · 个人消费；<br>
+                  · 英国签证费用；<br>
+                  · 国内交通费用；<br>
+                  · 国外通费用；<br>
+                  · 国际往返机票费用；<br>
+                  · 行李超重费用；<br>
+                  · 个人护照办理费用；<br>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="layui-tab-item" >
+            <div class="title" style="border: 1px solid #03AF7A;background
+            :rgba(3,175,122,.2);height: 40px;width: 100%;padding-left: 0px;padding-top: 8px;">
+              <span style="background: url(images/details/themai-tit.png) no-repeat 12px center;padding-left: 30px;">
+                特别•关注
+              </span>
+            </div>
+            <div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-left: 30px;padding-top: 0px;">
+              <div class="layui-card-body">
+                <strong>
+                  个人物品安全
+                </strong>
+                <p>
+                  · 建议不要携带过多现金进入营地，贵重物品请随身携带，所有个人物品清晰标注名字。<br>                
+                </p>
+                <br>
+                <strong>
+                  退改规则
+                </strong>
+                <p>
+                  · 出发前 60日（不含）以上取消退还100%游学费用；<br>
+                  · 出发前 60日（不含）以上取消退还100%游学费用；<br>
+                  · 出发前 15-30日（含）取消退还40%游学费用；<br>
+                  · 出发前 7-14日（含）取消退还25%游学费用；<br>
+                  · 出发前 4-6日（含）取消退还10%游学费用；<br>
+                  · 出发前 0-3日（含）取消不退还游学费用；<br>
+                </p>
+              </div>
+            </div>
+
+          </div>
+          <div class="layui-tab-item" >
+            <div class="title" style="border: 1px solid #03AF7A;background
+            :rgba(3,175,122,.2);height: 40px;width: 100%;padding-left: 0px;padding-top: 8px;">
+              <span style="background: url(images/details/themai-tit.png) no-repeat 12px center;padding-left: 30px;">
+                分享•同行
+              </span>
+            </div>
+            <div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-left: 30px;padding-top: 0px;">
+              <div class="layui-card-body">
+                <strong>
+                  营地报名电话
+                </strong>
+                <p>
+                  · 400-800-9966<br>                
+                </p>
+                <br>
+                <strong>
+                  营地公众号
+                </strong>
+                <p>
+                  · 哈顿星球成长学院<br>
+                </p>
+                <div>
+                 <img src="images/index/code.jpg" class="img-thumbnail" alt="Cinque Terre">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+
+
+
+  <div class="tail" style="background:url(images/index/u264.png);height: 300px;">
+    <div class="row" style="padding-left: 23%;padding-top: 10px;">
+      <div>
+        <hr style="width: 200px;border: 1px solid white;">
+      </div>
+      <div style="text-align: center;font-size: 16px;color: white;margin-top: 5px;margin-left: 10px;margin-right: 20px;">
+        <strong>联系我们/CONTACT US</strong>
+      </div>
+      <div>
+        <hr style="width: 200px;border: 1px solid white;">
+      </div>
+    </div>
+    <div>
+      <p style="text-align: center;font-size: 10px;color: white;">在您的建议与帮助下，我们将会变得越来越好！</p>
+    </div>
+    <div class="row">
+      <div style="padding-left: 180px;">
+        <img src="images/about/u669.jpg" class="img-thumbnail" alt="Cinque Terre" style="width: 70%;">
+      </div>
+<!--       <div style="padding-left: 180px;padding-top: 20px;">
+        <img src="images/index/u26.png" class="" alt="Cinque Terre" style="width: 138px;height: 134px;">
+      </div> -->
+      <div style="padding-left: 30%;padding-top: 30px;color: white;text-align: center;font-size: 16px;">
+        <p>联系我们</p>
+        <p>Tel：400-111-0611</p>
+        <p>微信公众号：少年行 未来营</p>
+      </div>
+      <div style="text-align: center;color: white;padding-left: 35%;padding-top: 10px;">
+        <p style="font-size: 12px;">© 2018 独角兽（深圳）营销管理有限公司 | 深ICP备18014687号</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+  layui.use(['carousel', 'form'], function(){
+    var carousel = layui.carousel
+    ,form = layui.form;
+    
+    //图片轮播
+    carousel.render({
+      elem: '#test10'
+      ,width: '95%'
+      ,height: '400px'
+      ,interval: 5000
+    });
+    
+    //事件
+    carousel.on('change(test4)', function(res){
+      console.log(res)
+    });
+    
+    var $ = layui.$, active = {
+      set: function(othis){
+        var THIS = 'layui-bg-normal'
+        ,key = othis.data('key')
+        ,options = {};
+        
+        othis.css('background-color', '#5FB878').siblings().removeAttr('style'); 
+        options[key] = othis.data('value');
+        ins3.reload(options);
+      }
+    };
+    
+    //监听开关
+    form.on('switch(autoplay)', function(){
+      ins3.reload({
+        autoplay: this.checked
+      });
+    });
+    
+    $('.demoSet').on('keyup', function(){
+      var value = this.value
+      ,options = {};
+      if(!/^\d+$/.test(value)) return;
+      
+      options[this.name] = value;
+      ins3.reload(options);
+    });
+    
+    //其它示例
+    $('.demoTest .layui-btn').on('click', function(){
+      var othis = $(this), type = othis.data('type');
+      active[type] ? active[type].call(this, othis) : '';
+    });
+  });
+
+
+    function getQueryStringArgs() {
+      var qs = (location.search.length > 0 ? location.search.substring(1) : ""),
+        args = {},
+        items = qs.length ? qs.split("&") : [],
+          item = null,
+        name = null,
+        value = null,
+        i = 0,
+        len = items.length;
+      for(i = 0; i < len; i++) {
+        item = items[i].split("=");
+        name = decodeURIComponent(item[0]);
+        value = decodeURIComponent(item[1]);
+        if(name.length) {
+          args[name] = value;
+        }
+      }
+      return args;
+    }
+
+    $(document).ready(function(){
+      var args = getQueryStringArgs();
+      console.log(args.id);
+      var detail_id = args.id;
+        $.ajax({
+          type:'POST',
+          url:'https://www.hattonstar.com/getCampactivities',
+          dataType:'json',
+          success:function(data){
+            var length = data.length;
+            var row =  Math.ceil(length / 3);
+            var remainder = length % 3;
+            var html = "";
+            for( var i = 0; i < length; i++ ) {
+                if (i%3==0) {
+                  html += '<div class="d-flex" style="height: 330px;">';
+                }
+                html += setDiv(data[i]);
+                if (i%3==2) {
+                  html += '</div>';
+                }
+            }
+            if (remainder) {
+              var num = 3 - remainder;
+              for (var i = 0; i < num; i++) {
+                html += setUnDiv();
+              }
+               html += '</div>';
+            }
+            console.log(html);
+            $("#Good_Div").html(html);
+          },
+          error:function(hex){
+            alert("错误返回");
+          }
+      }) 
+    })
+  </script>
+
+</body>
+</html>
