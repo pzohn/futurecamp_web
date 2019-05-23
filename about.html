@@ -127,11 +127,13 @@
   <div style="padding: 2%;padding-top: 5%">
     <div class="layui-row">
       <div class="layui-col-xs6" style="width: 45%;padding-right: 5%">
-        <input type="text" class="form-control input_normal" id="naem" placeholder="名字/Name">
-        <input type="email" class="form-control input_normal" id="email" placeholder="邮箱/E-mail">
-        <input type="text" class="form-control input_normal" id="phone" placeholder="电话/Telephone">
-        <input type="text" class="form-control input_normal" id="phone" placeholder="留言/Message" style="padding-bottom: 200px;padding-top: 30px;">
-        <button type="button" class="btn" style="background-color: #990000;color: #FFFFFF">提交/Message</button>
+        <form id="info_from">
+          <input type="text" class="form-control input_normal" name="info_name" id="info_name" placeholder="名字/Name">
+          <input type="email" class="form-control input_normal" name="info_email" id="info_email" placeholder="邮箱/E-mail">
+          <input type="phone" class="form-control input_normal" name="info_phone" id="info_phone" placeholder="电话/Telephone">
+          <input type="text" class="form-control input_normal" name="info_message" id="info_message" placeholder="留言/Message" style="padding-bottom: 200px;padding-top: 30px;">
+          <button type="submit" class="btn" style="background-color: #990000;color: #FFFFFF">提交/Message</button>          
+        </form>
       </div>
       <div class="layui-col-xs6" style="width:55%;text-align: center;">
         <div class="layui-row" style="padding-top: 5%;padding-right: 5%">
@@ -154,8 +156,35 @@
     </div>
   </div>
 
-    <script type="text/javascript">
-
+  <script type="text/javascript">
+     $("#info_from").submit(function(){
+        if ($("#info_name").val() == "") {
+          alert("姓名不能为空");
+          return ;
+        }
+        if ($("#info_phone").val() == "") {
+          alert("电话不能为空");
+          return ;
+        }
+        if(!(/^1[34578]\d{9}$/.test($("#info_phone").val()))){ 
+            alert("手机号码有误，请重填");  
+            return; 
+        } 
+        $.ajax({
+            async: false,
+            type: "POST",
+            url:'http://www.gfcamps.cn/saveMessage',
+            contentType : "application/x-www-form-urlencoded; charset=utf-8",
+            data:$("#info_from").serialize(),
+            dataType: "text",
+            success: function () {
+              alert("提交成功!!!");
+              },
+            error: function () {
+              alert("提交失败!!!");
+            }
+        })
+    })
     
   </script>
 </body>
