@@ -239,7 +239,7 @@
     }
 
     function getPath(item){
-      var url = "http://www.gfcamps.cn/images/"
+      var url = "https://www.gfcamps.cn/images/"
           + item
       return url;
     } 
@@ -442,23 +442,6 @@
         }
       $("#Special").html(html);
     } 
-    
-                
-                
-      
-                
-                
-                
-                  
-                
-        
-                
-                
-                
-                
-              
-
-
 
     $(document).ready(function(){
       var args = getQueryStringArgs();
@@ -466,7 +449,7 @@
       var detail_id = args.id;
         $.ajax({
           type:'POST',
-          url:'http://www.gfcamps.cn/getCampactivityById',
+          url:'https://www.gfcamps.cn/getCampactivityById',
           dataType:'json',
             data:{
             id : detail_id
