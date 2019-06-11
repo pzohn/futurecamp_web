@@ -7,7 +7,7 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>航空航天</title>
+  <title>地质</title>
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="bootstrap/js/popper.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
@@ -59,13 +59,13 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html">首页</a>
         </li>
-         <li class="nav-item">
+         <li class="nav-item active">
           <a class="nav-link" href="nature.html">自然营</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="survive.html">生存营</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="science.html">科学营</a>
         </li>
         <li class="nav-item">
@@ -175,7 +175,7 @@
       return div
     } 
     function getPath(item){
-      var url = "http://hattonstar.com/"
+      var url = "'https://www.gfcamps.cn/"
           + item.file
           +'/'
           + item.title_pic
@@ -189,7 +189,7 @@
     url:'https://www.gfcamps.cn/getCampactivitiesByLittleType',
     dataType:'json',
       data:{
-            type_id : 10
+            type_id : 5
           },
     success:function(data){
       var length = data.length;

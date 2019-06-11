@@ -242,6 +242,9 @@
     } 
 
     function setLunbo(arry){
+      if (arry == null) {
+        return;
+      }
       var html = '<div id="demo" class="carousel slide" data-ride="carousel" style="text-align: center;">'
               + '<ul class="carousel-indicators">'
       for (var i = 0; i < arry.length; i++) {
@@ -291,6 +294,9 @@
     } 
 
     function setDescPic(arry){
+      if (arry == null) {
+        return;
+      }
       var html = '<div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-left: 30px;padding-top: 0px;">'
             + '<ul class="layui-timeline">';
       for (var i = 0; i < arry.length; i++) {
@@ -303,6 +309,9 @@
 
               
     function setPlan(arry){
+      if (arry == null) {
+        return;
+      }
       var html = '<div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-left: 30px;padding-top: 0px;">'
               + '<ul class="layui-timeline">';
       for (var i = 0; i < arry.length; i++) {
@@ -319,13 +328,15 @@
             + arry[i].desc
             + '</p>';
         var imgarry = arry[i].pics;
-        html += '<div style="text-align: center;">';
-        for (var j = 0; j < imgarry.length; j++) {
-          html += '<img src="'
-              + getPath(imgarry[j])
-              + '" class="img-thumbnail" alt="Cinque Terre">';
+        if (imgarry != null) {
+          html += '<div style="text-align: center;">';
+          for (var j = 0; j < imgarry.length; j++) {
+            html += '<img src="'
+                + getPath(imgarry[j])
+                + '" class="img-thumbnail" alt="Cinque Terre">';
+          }
+          html += '</div>'
         }
-        html += '</div>'
       }
       $("#Plan").html(html);
     } 
@@ -343,7 +354,8 @@
               + data.activitytimes[i]
               + '<br>';
       }
-      html += '<strong style="font-size: 18px;">'
+      html += '</p>'
+          + '<strong style="font-size: 18px;">'
           + '活动地点'
           + '</strong>'
           + '<p style="font-size: 16px;">'
@@ -354,17 +366,17 @@
           + '活动费用'
           + '</strong>'
           + '<p style="color: red;font-size: 16px;">'
-          + '——同行：'
-          + data.charge_parent.toString()
-          + '元/人'
-          + '<br>'
+          // + '——同行：'
+          // + data.charge_parent.toString()
+          // + '元/人'
+          // + '<br>'
           + '——会员：'
           + data.charge.toString()
           + '元/人'
           + '</p>'
-          + '<p style="font-size: 16px;">'
-          + data.charge_info
-          + '</p>'
+          // + '<p style="font-size: 16px;">'
+          // + data.charge_info
+          // + '</p>'
           + '<br>'
           + '<strong style="font-size: 18px;">'
           + '活动优惠'
@@ -456,7 +468,6 @@
             setCampDesc(data.campdesc);
             setDesc(data.desc);
             setDescPic(data.present_pics);
-            setPlan(data.schedule_ids);
             setPlan(data.schedule_ids);
             setDetail(data);
             setSpecial(data);
