@@ -133,7 +133,7 @@
                 明细•费用
               </span>
             </div>
-            <div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-left: 30px;padding-top: 0px;">
+            <div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-top: 0px;">
               <div id="Detail"></div>
             </div>
           </div>
@@ -144,7 +144,7 @@
                 特别•关注
               </span>
             </div>
-            <div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-left: 30px;padding-top: 0px;">
+            <div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-top: 0px;">
                <div id="Special"></div>
 
           </div>
@@ -239,7 +239,7 @@
       var url = "https://www.gfcamps.cn/images/"
           + item
       return url;
-    } 
+    }
 
     function setLunbo(arry){
       if (arry == null) {
@@ -312,7 +312,7 @@
       if (arry == null) {
         return;
       }
-      var html = '<div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-left: 30px;padding-top: 0px;">'
+      var html = '<div class="content" style="border: 1px solid #03AF7A;width: 100%;padding-left: 30px;padding-top: 0px;background:#efefee">'
               + '<ul class="layui-timeline">';
       for (var i = 0; i < arry.length; i++) {
         html += '<li class="layui-timeline-item">'
@@ -324,7 +324,7 @@
             + '<p class="layui-timeline-title_p">'
             + arry[i].title
             + '</p>';
-        html += '<p style="font-size: 16px;padding-bottom: 10px;">'
+        html += '<p style="font-size: 16px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;">'
             + arry[i].desc
             + '</p>';
         var imgarry = arry[i].pics;
@@ -342,30 +342,32 @@
     } 
 
     function setDetail(data){
-      var html = '<div class="layui-card-body">'
+      var html = '<div class="layui-card-body" style="color:#868787;background-color:#efefee;">'
             + '<strong style="font-size: 18px;">'
             + '活动时间'
             + '</strong>'
             + '<p style="color: orange;ont-size: 16px;">';
-      for (var i = 0; i < data.activitytimes.length; i++) {
-          html += '第'
-              + (i+1).toString()
-              + '期:'
-              + data.activitytimes[i]
-              + '<br>';
+      if (data.activitytimes != null) {
+        for (var i = 0; i < data.activitytimes.length; i++) {
+            html += '第'
+                + (i+1).toString()
+                + '期:'
+                + data.activitytimes[i]
+                + '<br>';
+        }
       }
       html += '</p>'
-          + '<strong style="font-size: 18px;">'
+          + '<strong style="font-size: 16px;">'
           + '活动地点'
           + '</strong>'
-          + '<p style="font-size: 16px;">'
+          + '<p style="font-size: 14px;">'
           + data.address
           + '</p>'
           + '<br>'
-          + '<strong style="font-size: 18px;">'
+          + '<strong style="font-size: 16px;">'
           + '活动费用'
           + '</strong>'
-          + '<p style="color: red;font-size: 16px;">'
+          + '<p style="color: red;font-size: 14px;">'
           // + '——同行：'
           // + data.charge_parent.toString()
           // + '元/人'
@@ -378,17 +380,17 @@
           // + data.charge_info
           // + '</p>'
           + '<br>'
-          + '<strong style="font-size: 18px;">'
+          + '<strong style="font-size: 16px;">'
           + '活动优惠'
           + '</strong>'
-          + '<p style="font-size: 16px;">'
+          + '<p style="font-size: 14px;">'
           + data.preferential
           + '</p>'
           + '<br>'
-          + '<strong style="font-size: 18px;">'
+          + '<strong style="font-size: 16px;">'
           + '报名方式'
           + '</strong>'
-          + '<p style="font-size: 16px;">'
+          + '<p style="font-size: 14px;">'
           + '填写报名表，扫描下二维码，填写报名表即可。'
           + '</p>'
           + '<img src="images/index/code.jpg" class="img-thumbnail" alt="Cinque Terre">'
@@ -397,55 +399,59 @@
 
 
   function setSpecial(data){
-      var html = '<div class="layui-card-body">';
-      for (var i = 0; i < data.special.length; i++) {
-        html += '<strong style="font-size: 18px;">'
-            + data.special[i].title
-            + '</strong>'
-            + '<br>';
-        for (var j = 0; j < data.special[i].pics.length; j++) {
-            html += '<img src="'
-                + getPath(data.special[i].pics[j])
-                + '" class="img-thumbnail" alt="Cinque Terre">';
+      var html = '<div class="layui-card-body" style="background:#efefee;color:#868787;">';
+      if (data.special != null) {
+        for (var i = 0; i < data.special.length; i++) {
+          html += '<strong style="font-size: 16px;">'
+              + data.special[i].title
+              + '</strong>'
+              + '<br>';
+          if (data.special[i].pics != null) {
+            for (var j = 0; j < data.special[i].pics.length; j++) {
+                html += '<img src="'
+                    + getPath(data.special[i].pics[j])
+                    + '" class="img-thumbnail" alt="Cinque Terre">';
+              }
           }
-        html += '<p style="font-size: 16px;">'
-            + data.special[i].content
-            + '</p>'
-            + '<br>' 
+          html += '<p style="font-size: 14px;">'
+              + data.special[i].content
+              + '</p>'
+              + '<br>' 
+        }
       }
-      html += '<strong style="font-size: 18px;">'
+      html += '<strong style="font-size: 16px;">'
           + '饮食'
           + '</strong>'
-          + '<p style="font-size: 16px;">'
+          + '<p style="font-size: 14px;">'
           + data.food
           + '</p>'
           + '<br>'
-          + '<strong style="font-size: 18px;">'
+          + '<strong style="font-size: 16px;">'
           + '住宿'
           + '</strong>'
-          + '<p style="font-size: 16px;">'
+          + '<p style="font-size: 14px;">'
           + data.stay
           + '</p>'
           + '<br>'
-          + '<strong style="font-size: 18px;">'
+          + '<strong style="font-size: 16px;">'
           + '交通'
           + '</strong>'
-          + '<p style="font-size: 16px;">'
+          + '<p style="font-size: 14px;">'
           + data.traffic
           + '</p>'
           + '<br>'
-          + '<strong style="font-size: 18px;">'
+          + '<strong style="font-size: 16px;">'
           + '安全'
           + '</strong>'
-          + '<p style="font-size: 16px;">'
+          + '<p style="font-size: 14px;">'
           + data.safe
           + '</p>'
           + '<br>'
         if (data.other != "") {
-          html += '<strong style="font-size: 18px;">'
+          html += '<strong style="font-size: 16px;">'
               + '其他'
               + '</strong>'
-              + '<p style="font-size: 16px;">'
+              + '<p style="font-size: 14px;">'
               + data.other
               + '</p>'
         }

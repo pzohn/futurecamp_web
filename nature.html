@@ -41,6 +41,10 @@
     {
       width:auto;height:auto;max-width:100%;max-height:100%;padding-top: 0px;
     }
+    .lunboimg
+    {
+      width:auto;height:auto;max-width:90%;max-height:90%;
+    }
     .middle {
        float: none;
        display: inline-block;
@@ -91,20 +95,24 @@
         <li data-target="#demo" data-slide-to="1"></li>
         <li data-target="#demo" data-slide-to="2"></li>
         <li data-target="#demo" data-slide-to="3"></li>
+        <li data-target="#demo" data-slide-to="4"></li>
       </ul>
      
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="img-fluid" src="images/home/home1.jpg">
+          <img class="lunboimg" src="https://www.gfcamps.cn/images/lunbo/guanniao.jpg">
         </div>
         <div class="carousel-item">
-          <img class="img-fluid" src="images/home/home2.jpg">
+          <img class="lunboimg" src="https://www.gfcamps.cn/images/lunbo/dongwu1.jpg">
         </div>
         <div class="carousel-item">
-          <img class="img-fluid" src="images/home/home3.jpg">
+          <img class="lunboimg" src="https://www.gfcamps.cn/images/lunbo/kunchong.jpg">
         </div>
         <div class="carousel-item">
-          <img class="img-fluid" src="images/home/home4.jpg">
+          <img class="lunboimg" src="https://www.gfcamps.cn/images/lunbo/tianwen.jpg">
+        </div>
+        <div class="carousel-item">
+          <img class="lunboimg" src="https://www.gfcamps.cn/images/lunbo/dizhi1.jpg">
         </div>
       </div>
      
@@ -317,7 +325,6 @@
               }
                html += '</div>';
             }
-            console.log(html);
             var devname = "#Good_Div_" + id.toString();
             $(devname).html(html);
           },
