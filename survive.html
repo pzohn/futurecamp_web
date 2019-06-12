@@ -225,7 +225,7 @@
       var div = '<div class="p-2 flex-fill">'
           + '<img src='
           + getPath(item)
-          + ' style="padding-bottom: 20px;">'
+          + ' style="padding-bottom: 20px;width: 338px;height: 250px;">'
           + '<div style="width: 338px;">'
           +'<p>'
            + item.name
@@ -253,7 +253,7 @@
       return div
     } 
     function getPath(item){
-      var url = "http://hattonstar.com/"
+      var url = "https://www.gfcamps.cn/images/"
           + item.file
           +'/'
           + item.title_pic
@@ -294,7 +294,8 @@
             $(devname).html(html);
           },
           error:function(hex){
-            alert("错误返回");
+            //alert("错误返回");
+            console.log("错误返回");
           }
         }) 
     }
