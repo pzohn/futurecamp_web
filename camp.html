@@ -63,7 +63,7 @@
         </div>
         <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 40%;">
           <p style="font-size: 50px;color:#FFFFFF;padding-top:5%;padding-left: 5% ">
-            知于体验  行与未来
+            知于体验  行于未来
           </p>
         </div>
         <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 30%;">
@@ -81,9 +81,7 @@
     </ul>
   </div>
   <div class="body">
-    <div>
-      <img class="autoimg" src="images/info/product1.jpg">
-    </div>
+    <div id="Header_Div"></div>
     <div style="text-align: center;padding-top: 5%;padding-bottom: 3%;">
       <p style="font-size: 48px;color:#FFFFFF;">
         营地介绍
@@ -93,29 +91,10 @@
 
     <div class = "layui-row" style="padding-top: 3%">
       <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 35%;">
-        <div class="layui-row">
-          <div class="layui-col-md6">
-             <div><img src="images/info/1.jpg" style="margin: 2px;"></div>
-          </div>
-          <div class="layui-col-md6">
-             <div><img src="images/info/2.jpg" style="margin: 2px;"></div>
-          </div>
-              <div class="layui-col-md6">
-             <div><img src="images/info/3.jpg" style="margin: 2px;"></div>
-          </div>
-          <div class="layui-col-md6">
-             <div><img src="images/info/4.jpg" style="margin: 2px;"></div>
-          </div>
-        </div>
+        <div id="Zizhi_Div"></div>
       </div>
       <div class="layui-col-xs4 layui-col-sm12 layui-col-md4" style="width: 65%;padding-left: 2%">
-        <div>
-         <p style="font-size: 22px;color: #FFFFFF;">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;游美营地教育 / YMCE Group成立于2010年，相继成为美国营地协会（ACA）和国际营地协会（ICF）的双成员，中国营地教育联盟（CCEA）发起人理事单位。作为一家总部位于北京的国际营地教育机构，2016年，游美收获爆炸式增长，分别于国内千岛湖、上海、北京成立3家自建营地。2017年底，游美公司获得国内知名机构投资，成为行业内一致认可的头部企业。</p>
-         <p style="font-size: 22px;color: #FFFFFF;">
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2018年，未来营推出“重新定义营地教育”计划，重磅打造YSS游美环球滑雪学院和游美Discovery环球探索团，致力于更好地培养中国孩子成为具有国际化视野和竞争力的青少年。 8年来，未来营与美、加等国50多个TOP顶级营地建立了战略合作关系，组织了近万名中国青少年赴海外或国内自建营地参加夏令营和游学等活动，得到了孩子和家长的高度认可与好评。
-         </p>
-        </div>
+        <div id="Info_Div"></div>
       </div>
     </div>
     <div style="text-align: center;padding-top: 5%;padding-bottom: 3%;">
@@ -175,36 +154,13 @@
           </p>
         </div>
         <div class="layui-row">
-          <div class="layui-col-md4" style="width: 35%;padding-left: 5%;padding-bottom: 5%;padding-top: 8%">
-            <p style="font-size: 20px;color:#CCCCCC;">
-             电话：(010）64173809
-            </p>
-            <p style="font-size: 20px;color:#CCCCCC;padding-top: 5%;padding-bottom: 5%">
-              邮箱：darius@ymcegroup.com
-            </p>
-            <p style="font-size: 20px;color:#CCCCCC;">
-              网址：http://www.ymcegroup.com
-            </p>
-          </div>
-          <div class="layui-col-md4" style="width: 35%;padding-bottom: 5%;">
+          <div id="Base_Div"></div>
+          <div class="layui-col-md4" style="width: 15%;padding-bottom: 5%;">
               <div id="map" style="width: 306px;height: 298px;"></div>
           </div>
-          <div class="layui-col-md4" style="width: 25%;">
-            <div><img class="fiximg" src="images/info/gongzhonghao.jpg"></div>
-            <div style="text-align: center;">
-              <p style="font-size: 18px;color:#CCCCCC;">
-                扫描二维码
-              </p>
-              <p style="font-size: 18px;color:#CCCCCC;">
-                关注我们公众号
-              </p>
-              <p style="font-size: 18px;color:#CCCCCC;">
-                游美营地教育
-              </p>
-            </div>
-          </div>
+          <div id="Code_Div"></div>
           <div>
-            
+        
           </div>
         </div>
         <div style="text-align: center;padding-top: 2%;padding-bottom: 3%">
@@ -236,43 +192,77 @@
       return args;
     }
 
-
-    function setDiv(item){
-      var div = '<div class="p-2 flex-fill">'
-          + '<img src='
+    function setHeader(item){
+      var html = '<div>'
+          + '<img class="autoimg" src="'
           + getPath(item)
-          + ' style="padding-bottom: 20px;">'
-          + '<div style="width: 338px;">'
-          +'<p>'
-           + item.name
+          + '">'
+          + '</div>'
+      $("#Header_Div").html(html);
+    }
+
+    function setZizhi(item){
+      var length = item.length;
+      var html = '<div class="layui-row">';
+      for (var i = 0; i < length; i++) {
+          html += '<div class="layui-col-md6">'
+              + '<div><img src="'
+              + getPath(item[i])
+              + '" style="margin: 2px;"></div>'
+              + '</div>'
+      }
+      html += '</div>';
+      $("#Zizhi_Div").html(html);
+    } 
+
+    function setInfo(item){
+      var html = '<div>'
+          + '<p style="font-size: 22px;color: #FFFFFF;">'
+          + item
           + '</p>'
           + '</div>'
-          + '<div style="width: 338px; padding-left: 70%">'
-          + '<a href="detail.html?id='
-          + item.id
-          + '"'
-          + ' class="btn btn-primary" role="button" style="width: 90px;">查看详情</a>'
-          + '</div>'
-          +'</div>'
-      return div
-    } 
-    function setUnDiv(item){
-      var div = '<div class="p-2 flex-fill">'
-          + '<img style="padding-bottom: 20px;">'
-          + '<div style="width: 338px;">'
-          +'<p>'
+      $("#Info_Div").html(html);
+    }
+
+    function setBase(item){
+      var html = '<div class="layui-col-md4" style="width: 45%;padding-left: 10%;padding-bottom: 5%;padding-top: 8%">'
+          + '<p style="font-size: 20px;color:#CCCCCC;">'
+          + '电话：'
+          + item.phone
+          + '</p>'
+          + '<p style="font-size: 20px;color:#CCCCCC;padding-top: 5%;padding-bottom: 5%">'
+          + '邮箱：'
+          + item.email
+          + '</p>'
+          + '<p style="font-size: 20px;color:#CCCCCC;">'
+          + '地址：'
+          + item.address
           + '</p>'
           + '</div>'
-          + '<div style="width: 338px; padding-left: 70%">'
+      $("#Base_Div").html(html);
+    }
+
+    function setCode(item){
+      var html = '<div class="layui-col-md4" style="width: 25%;">'
+          + '<div><img class="fiximg" src="'
+          + getPath(item.weixin_pic)
+          + '"></div>'
+          + '<div style="text-align: center;">'
+          + '<p style="font-size: 18px;color:#CCCCCC;">'
+          + '扫描二维码'
+          + '</p>'
+          + '<p style="font-size: 18px;color:#CCCCCC;">关注我们公众号</p>'
+          + '<p style="font-size: 18px;color:#CCCCCC;">'
+          + item.name
+          + '</p>'
           + '</div>'
-          +'</div>'
-      return div
-    } 
+          + '</div>'
+      $("#Code_Div").html(html);
+    }
+
     function getPath(item){
-      var url = "http://hattonstar.com/"
-          + item.file
-          +'/'
-          + item.title_pic
+      var url = "https://www.gfcamps.cn/images/camps/"
+          + item
       return url;
     } 
     $(document).ready(function(){
@@ -286,28 +276,11 @@
             id : detail_id
           },
           success:function(data){
-            var length = data.length;
-            var row =  Math.ceil(length / 3);
-            var remainder = length % 3;
-            var html = "";
-            for( var i = 0; i < length; i++ ) {
-                if (i%3==0) {
-                  html += '<div class="d-flex" style="height: 330px;">';
-                }
-                html += setDiv(data[i]);
-                if (i%3==2) {
-                  html += '</div>';
-                }
-            }
-            if (remainder) {
-              var num = 3 - remainder;
-              for (var i = 0; i < num; i++) {
-                html += setUnDiv();
-              }
-               html += '</div>';
-            }
-            console.log(html);
-            $("#Good_Div").html(html);
+            setHeader(data.title_pic);
+            setZizhi(data.zizhi);
+            setInfo(data.info);
+            setBase(data);
+            setCode(data);
           },
           error:function(hex){
             alert("错误返回");
