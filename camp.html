@@ -205,6 +205,7 @@
       var length = item.length;
       var html = '<div class="layui-row">';
       for (var i = 0; i < length; i++) {
+          if (i == 4) {break;}
           html += '<div class="layui-col-md6">'
               + '<div><img src="'
               + getPath(item[i])
