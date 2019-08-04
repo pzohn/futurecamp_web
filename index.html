@@ -199,47 +199,28 @@
       </a>
     </div> -->  
 
-    <div id="demo1" class="carousel slide" data-ride="carousel" style="text-align: center;padding-top: 5%;">
-      <ul class="carousel-indicators">
-        <li data-target="#demo2" data-slide-to="0" class="active"></li>
-        <li data-target="#demo2" data-slide-to="1"></li>
-        <li data-target="#demo2" data-slide-to="2"></li>
-      </ul>
-      <div class="carousel-inner">
-        <a href="camp.html?id=1">
-        <div class="carousel-item active">
-          <img class="img-thumbnail lunboimg1" src="images/index/youmei11.jpg">
-        </div>
-        <div class="carousel-item">
-          <img class="img-thumbnail lunboimg1" src="images/index/youmei12.jpg">
-        </div>
-        <div class="carousel-item">
-          <img class="img-thumbnail lunboimg1" src="images/index/youmei13.jpg">
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#demo2" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </a>
-      <a class="carousel-control-next" href="#demo2" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </a>
-    </div>
+    <div id="demo_0"></div>
+    <div id="demo_1"></div>
+    <div id="demo_2"></div>
 
-    <div id="demo2" class="carousel slide" data-ride="carousel" style="text-align: center;padding-top: 5%;">
+
+<!--     <div id="demo2" class="carousel slide" data-ride="carousel" style="text-align: center;padding-top: 5%;">
       <ul class="carousel-indicators">
         <li data-target="#demo2" data-slide-to="0" class="active"></li>
         <li data-target="#demo2" data-slide-to="1"></li>
         <li data-target="#demo2" data-slide-to="2"></li>
       </ul>
       <div class="carousel-inner">
-        <a href="camp.html?id=2">
         <div class="carousel-item active">
+          <a href="camp.html?id=12">
           <img class="img-thumbnail lunboimg1" src="images/index/yingjia11.jpg">
         </div>
         <div class="carousel-item">
+          <a href="camp.html?id=1">
           <img class="img-thumbnail lunboimg1" src="images/index/yingjia12.jpg">
         </div>
         <div class="carousel-item">
+          <a href="camp.html?id=11">
           <img class="img-thumbnail lunboimg1" src="images/index/yingjia13.jpg">
         </div>
       </div>
@@ -249,33 +230,8 @@
       <a class="carousel-control-next" href="#demo2" data-slide="next">
         <span class="carousel-control-next-icon"></span>
       </a>
-    </div>
+    </div> -->
 
-    <div id="demo3" class="carousel slide" data-ride="carousel" style="text-align: center;padding-top: 5%;padding-bottom: 5%">
-      <ul class="carousel-indicators">
-        <li data-target="#demo3" data-slide-to="0" class="active"></li>
-        <li data-target="#demo3" data-slide-to="1"></li>
-        <li data-target="#demo3" data-slide-to="2"></li>
-      </ul>
-      <div class="carousel-inner">
-        <a href=camp.html?id=3">
-        <div class="carousel-item active">
-          <img class="img-thumbnail lunboimg1" src="images/index/cheng11.jpg">
-        </div>
-        <div class="carousel-item">
-          <img class="img-thumbnail lunboimg1" src="images/index/cheng12.jpg">
-        </div>
-        <div class="carousel-item">
-          <img class="img-thumbnail lunboimg1" src="images/index/cheng13.jpg">
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#demo3" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </a>
-      <a class="carousel-control-next" href="#demo3" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </a>
-    </div>
 
 <!--     <div style="padding-top: 20px;">
       <img src="images/index/product2.jpg" class="img-thumbnail" alt="Cinque Terre">
@@ -304,7 +260,7 @@
     </div>
     <div class="row">
       <div style="padding-left: 180px;">
-        <img src="images/about/u669.jpg" class="img-thumbnail" alt="Cinque Terre" style="width: 70%;">
+        <img src="images/about/gzh20190804.jpg" class="img-thumbnail" alt="Cinque Terre" style="width: 70%;">
       </div>
 <!--       <div style="padding-left: 180px;padding-top: 20px;">
         <img src="images/index/u26.png" class="" alt="Cinque Terre" style="width: 138px;height: 134px;">
@@ -321,41 +277,97 @@
   </div>
 
   <script type="text/javascript">
-    $(document).ready(function(){
-       $("#submit").click(function(){
-        var userName = $("#username").val();
-        var passWord = $("#password").val();
 
-        if(userName == "" || userName == null)
-        {
-          alert("请输入用户名！");
-          return;
-        }
-        
-        if(passWord == null || passWord == "" )
-        {
-          alert("请输入密码！");
-          return;
-        }
+    function setDemo_begin(index){
+      var div = '<div>'
+          + '<div id="demo' + index
+          + '" class="carousel slide" data-ride="carousel" style="text-align: center;padding-top: 5%;">'
+          + '<ul class="carousel-indicators">'
+          + '<li data-target="#demo' + index
+          + '" data-slide-to="0" class="active"></li>'
+          + '<li data-target="#demo' + index
+          + '" data-slide-to="1"></li>'
+          + '<li data-target="#demo' + index
+          + '" data-slide-to="2"></li>'
+          + '</ul>'
+          + '<div class="carousel-inner">'
+      return div
+    } 
+
+    function setDemo_center(index,item){
+      var div = ""
+      if (index == 0 || index == 3 || index == 6) {
+        div += '<div class="carousel-item active">'
+      } else {
+        div += '<div class="carousel-item">'
+      }
+      div += '<a href="camp.html?id=' + item.camp_id + '">'
+          + '<img class="img-thumbnail lunboimg1" src="'
+          + getPath(item.title_pic) + '">'
+          + '</div>'
+      return div
+    } 
+
+    function setDemo_end(index){
+      var div = '</div>'
+          + '<a class="carousel-control-prev" href="#demo' + index
+          + '" data-slide="prev">'
+          + '<span class="carousel-control-prev-icon"></span>'
+          + '</a>'
+          + '<a class="carousel-control-next" href="#demo' + index
+          + '" data-slide="next">'
+          + '<span class="carousel-control-next-icon"></span>'
+          + '</a>'
+          + '</div>'
+          + '</div>'
+      return div
+    } 
+
+    function getPath(item){
+      var url = "https://www.gfcamps.cn/images/camps/"
+          + item
+      return url;
+    } 
+
+    function initNine(){
         $.ajax({
           type:'POST',
-          url:'https://www.yztcc.com/login',
-          data:{
-            username : userName,
-            password :passWord
-          },
+          url:'https://www.gfcamps.cn/getNine',
           dataType:'json',
           success:function(data){
-			alert("结果返回成功");
-            var str = eval(data);
-            if(str == "success")
-              alert("登录成功");
+            for (var i = 0; i < 3; i++) {
+              var html = setDemo_begin(i);
+              if (i == 0){
+                for (var j = 0; j < 3; j++) {
+                  html += setDemo_center(j,data[j])
+                }
+              }
+              else if (i == 1){
+                for (var j = 3; j < 6; j++) {
+                  html += setDemo_center(j,data[j])
+                }
+              }
+              else if (i == 2){
+                for (var j = 6; j < 9; j++) {
+                  html += setDemo_center(j,data[j])
+                }
+              }
+              html += setDemo_end(i)
+              var demo = "#demo_" + i
+              console.log(html)
+             $(demo).html(html);
+            }
           },
           error:function(hex){
-            alert("登录失败");
+            //alert("错误返回");
+            console.log("错误返回");
           }
-        })
-       })
+        }) 
+    }
+
+    //不分页
+    $(document).ready(function(){
+        initNine()
     })
     
   </script>
