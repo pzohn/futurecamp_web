@@ -40,7 +40,16 @@
     } 
     .navbar .nav > li:hover .dropdown-menu { 
         display: block; 
-    } 
+    }
+    .header {
+       position:fixed;
+       width:60%;
+ flex: none;
+ left: 15%;
+ background: #fff;
+ z-index: 999;
+ top: 0;
+    }
   </style>
 
 </head>
@@ -78,7 +87,7 @@
       </ul>
     </nav>
   </div>
-  <div class="body">
+  <div class="body" style="padding-top: 20%">
     <div id="demo" class="carousel slide" data-ride="carousel" style="text-align: center;">
       <ul class="carousel-indicators">
         <li data-target="#demo" data-slide-to="0" class="active"></li>
